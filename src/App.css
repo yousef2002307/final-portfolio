@@ -1,0 +1,122 @@
+
+.projects {
+  padding: 2rem;
+  margin: auto;
+}
+.projects h2{
+  text-align: center;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}.projects {
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners for the section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Increased gap for better spacing */
+}
+
+.card {
+  padding: 1.5rem; /* Slightly more padding */
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 12px; /* More rounded corners */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  background-color: white; /* White background for cards */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s; /* Smooth image zoom effect */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Zoom effect on image */
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem; /* Spacing for title */
+  font-size: 1.5rem; /* Larger font size for title */
+  color: #333; /* Darker color for better readability */
+
+}
+
+.card p {
+  color: #666; /* Softer color for description */
+  font-size: 1rem; /* Standard font size for description */
+}.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed to three columns */
+  gap: 1.5rem; /* Space between cards */
+}
+
+.card {
+  padding: 1.5rem; /* Padding for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  background-color: white; /* Card background color */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s; /* Smooth image zoom effect */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Zoom effect on image */
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem; /* Spacing for title */
+  font-size: 1.5rem; /* Title font size */
+  color: #333; /* Title color */
+}
+
+.card p {
+  color: #666; /* Description color */
+  font-size: 1rem; /* Description font size */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
