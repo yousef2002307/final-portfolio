@@ -3,6 +3,10 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import image from './assets/images/Capture.PNG'; // Updated path to the image
+import image2 from './assets/images/Capture2.png'; // Updated path to the image
+import image3 from './assets/images/Capture4.png';
+import image4 from './assets/images/5Capture.png';
+import image5 from './assets/images/Capture6666.png';
 function App() {
   const projects = [
     {
@@ -21,17 +25,51 @@ attendant or not , and  other features. `,
     },
     {
       id: 2,
-      title: 'Project Two',
-      description: 'Description of Project Two.',
-      imageUrl: 'https://via.placeholder.com/150',
-      url: 'https://example.com/project-two'
+      title: 'Food shooping and delivery (sharaqy)',
+      description: `
+       -Developed a web application for a food restaurant that 
+helps users to view products ,  order them and add 
+them to cart \n.  
+-multilingual support , payment gateway integration(paymob),
+ Admin dashboard that help owner of app to get statistics about orders and products, \n
+ - to change products info to do CRUD operation on users , to view 
+users order \n
+ - Contact us Form.
+      `,
+      imageUrl: image2,
+      url: 'https://sharqyeg.com/'
     },
     {
       id: 3,
-      title: 'Project Three',
-      description: 'Description of Project Three.',
-      imageUrl: 'https://via.placeholder.com/150',
-      url: 'https://example.com/project-three'
+      title: 'Heart clinic managment system',
+      description: ` In this project, used PHP / Laravel, HTML/CSS, and vanilla 
+JavaScript with Bootstrap. It provides services for  
+patients, admins, doctors, and receptionists,provides live notifications betwwen admins and patients and provides live chat using websockets,includes 
+online appointment scheduling, editing and providing  
+information, searching and rating clinics, and other 
+features 
+ Created a responsive web application that allows users 
+to book appointments , pay online , login and register 
+and more great features`,
+      imageUrl: image3,
+      url: 'https://github.com/yousef2002307/cli-managment-final2.git'
+    },
+    {
+      id: 4,
+      title: 'Online Store(pearl store)',
+      description: ` In this project, used PHP / Laravel to make the store, has full ecommerce features, includes admin dashboard, login and register,
+      has online payment (using saded payment gateway in Qatar), cart , order, rating and faviourte functionality and nuch more.
+      `,
+      imageUrl: image4,
+      url: 'https://pearl-store.net/'
+    },
+    {
+      id: 5,
+      title: 'Coffe shop(coffee point)',
+      description: ` In this project, compress large product images using intervention image package in laravel,used PHP / Laravel to make the store, has full ecommerce (cart,order,rating,favourite) features, includes admin dashboard, login and register, much more.
+      `,
+      imageUrl: image5,
+      url: 'https://pearl-store.net/'
     },
     // Add more projects as needed
   ];

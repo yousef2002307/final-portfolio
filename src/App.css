@@ -120,3 +120,29 @@
   height: auto;
   border-radius: 8px;
 }
+/* Add this at the end of your App.css file */
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+
+  .card {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 901px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+  }
+}
