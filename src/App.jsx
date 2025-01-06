@@ -2,11 +2,13 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import image from './assets/images/Capture.PNG'; // Updated path to the image
+import image from './assets/images/Capture.png'; // Updated path to the image
 import image2 from './assets/images/Capture2.png'; // Updated path to the image
 import image3 from './assets/images/Capture4.png';
 import image4 from './assets/images/5Capture.png';
 import image5 from './assets/images/Capture6666.png';
+import image6 from './assets/images/66Capture.png';
+import image7 from './assets/images/44Capture.png';
 function App() {
   const projects = [
     {
@@ -70,6 +72,25 @@ and more great features`,
       `,
       imageUrl: image5,
       url: 'https://pearl-store.net/'
+    },
+    {
+      id: 6,
+      title: 'School subject system using php',
+      description: ` 
+      This project i made using only php for the backend is about an advanced student results system where admin can assign student to subjects and add 
+their results and student access their final results of exams
+Technologies : php , Ajax, html, Css and bootstrap.
+      
+      `,
+      imageUrl: image7,
+      url: 'https://github.com/yousef2002307/subject-sysstem.git'
+    },
+    {
+      id: 7,
+      title: 'Chat app(Messenger clone)',
+      description: `in this project used websockets and SSE(server side events) to make real time chat app using Laravel and jquery, includes chat system like messenger.`,
+      imageUrl: image6,
+      url: 'https://github.com/yousef2002307/chatApp-Using-Laravel.git'
     },
     // Add more projects as needed
   ];
