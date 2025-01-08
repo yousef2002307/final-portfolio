@@ -73,7 +73,7 @@ and more great features`,
       description: ` In this project, compress large product images using intervention image package in laravel,used PHP / Laravel to make the store, has full ecommerce (cart,order,rating,favourite) features, includes admin dashboard, login and register, much more.
       `,
       imageUrl: image5,
-      url: 'https://pearl-store.net/'
+      url: 'https://coffeepointegy.com/'
     },
     {
       id: 6,
