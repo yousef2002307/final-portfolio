@@ -9,6 +9,7 @@ import image4 from './assets/images/5Capture.png';
 import image5 from './assets/images/Capture6666.png';
 import image6 from './assets/images/66Capture.png';
 import image7 from './assets/images/44Capture.png';
+import image8 from './assets/images/ccapture.png';
 function App() {
   const projects = [
     {
@@ -97,7 +98,7 @@ Technologies : php , Ajax, html, Css and bootstrap.
       id: 8,
       title: 'Advanced Ecommerce using Laravel (Rabeemall)',
       description: `integration with fawry pay and paymob and pay in installments with Vulu,Scout search,and polymorphic relation and SEO optimization and classic ecommerce features(cart,orders,etc).`,
-      imageUrl: image6,
+      imageUrl: image8,
       url: 'https://rabeamall.com/'
     },
     // Add more projects as needed
