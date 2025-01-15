@@ -10,6 +10,7 @@ import image5 from './assets/images/Capture6666.png';
 import image6 from './assets/images/66Capture.png';
 import image7 from './assets/images/44Capture.png';
 import image8 from './assets/images/ccapture.png';
+import image9 from './assets/images/apture.png';
 function App() {
   const projects = [
     {
@@ -101,6 +102,14 @@ Technologies : php , Ajax, html, Css and bootstrap.
       imageUrl: image8,
       url: 'https://rabeamall.com/'
     },
+    {
+      id : 9,
+      title : "quiz app",
+      description : `I built a quiz app using Laravel. It includes user registration, login functionality, and an admin dashboard 
+for managing quizzes and users.`,
+imageUrl : image9,
+url : "https://github.com/yousef2002307/laravel-project-quiz-app.git"
+    }
     // Add more projects as needed
   ];
 
