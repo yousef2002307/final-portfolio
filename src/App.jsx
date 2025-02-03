@@ -11,6 +11,7 @@ import image6 from './assets/images/66Capture.png';
 import image7 from './assets/images/44Capture.png';
 import image8 from './assets/images/ccapture.png';
 import image9 from './assets/images/apture.png';
+import image11 from './assets/images/Cwapture.png';
 function App() {
   const projects = [
     {
@@ -109,6 +110,13 @@ Technologies : php , Ajax, html, Css and bootstrap.
 for managing quizzes and users.`,
 imageUrl : image9,
 url : "https://github.com/yousef2002307/laravel-project-quiz-app.git"
+    },
+    {
+      id : 10,
+      title : "weather app using php",
+      description : `I built a weather app using PHP . , dealt with external api using php Guzzle, It allows users to search for current weather conditions and get detailed information about the weather in their area.`,
+imageUrl : image11,
+url : "https://github.com/yousef2002307/weatherAppWithPhp.git"
     }
     // Add more projects as needed
   ];
