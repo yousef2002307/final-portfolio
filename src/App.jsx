@@ -138,6 +138,15 @@ url : "https://github.com/yousef2002307/weatherAppWithPhp.git"
 
   return (
     <>
+  
+<section className="about-me">
+  
+  <p>
+    I am a full-stack Laravel/PHP web developer with over 1 year of experience and a computer science graduate. 
+    I have completed more than 60 projects in web development, including over +10 live projects for actual clients 
+    during my work experience, from start to finish.
+  </p>
+</section>
       <section className="projects">
         <h2>My Projects</h2>
         <div className="projects-grid">

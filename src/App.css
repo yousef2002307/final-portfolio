@@ -146,3 +146,118 @@
     grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
   }
 }
+
+.about-me {
+  background-color: #f4f4f4; /* Light background color */
+  padding: 20px; /* Spacing around the content */
+  border-radius: 8px; /* Rounded corners */
+  margin: 20px 0; /* Space above and below the section */
+  text-align: center; /* Center the text */
+}
+
+.about-me h2 {
+  color: #333; /* Darker color for the heading */
+  font-size: 2em; /* Larger font size */
+}
+
+.about-me p {
+  color: #555; /* Slightly lighter color for the paragraph */
+  font-size: 1.2em; /* Increased font size for readability */
+}
+
+.about-me {
+  background-color: #f4f4f4; /* Light background color */
+  padding: 20px; /* Spacing around the content */
+  border-radius: 8px; /* Rounded corners */
+  margin: 20px 0; /* Space above and below the section */
+  text-align: center; /* Center the text */
+  opacity: 0; /* Start invisible for fade-in effect */
+  transform: translateY(20px); /* Start slightly below for slide effect */
+  animation: fadeInUp 1s forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+.about-me h2 {
+  color: #333; /* Darker color for the heading */
+  font-size: 2em; /* Larger font size */
+  animation: slideIn 0.5s forwards; /* Slide-in animation for heading */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+.about-me p {
+  color: #555; /* Slightly lighter color for the paragraph */
+  font-size: 1.2em; /* Increased font size for readability */
+  transition: transform 0.3s; /* Smooth transition for scaling */
+}
+
+.about-me:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+
+.projects {
+  padding: 2rem;
+  margin: auto;
+  opacity: 0; /* Start invisible for fade-in effect */
+  transform: translateY(20px); /* Start slightly below for slide effect */
+  animation: fadeInUp 1s forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+.card {
+  padding: 1.5rem; /* Padding for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  background-color: white; /* Card background color */
+  opacity: 0; /* Start invisible for fade-in effect */
+  transform: translateY(20px); /* Start slightly below for slide effect */
+  animation: fadeInUp 0.5s forwards; /* Apply fade-in animation */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem; /* Spacing for title */
+  font-size: 1.5rem; /* Larger font size for title */
+  color: #333; /* Darker color for better readability */
+  animation: slideIn 0.5s forwards; /* Slide-in animation for title */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px); /* Start slightly below */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateY(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+  }
+}
