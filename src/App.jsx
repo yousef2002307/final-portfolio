@@ -12,6 +12,7 @@ import image7 from './assets/images/44Capture.png';
 import image8 from './assets/images/ccapture.png';
 import image9 from './assets/images/apture.png';
 import image11 from './assets/images/Cwapture.png';
+import image12 from './assets/images/Capturesina.png';
 function App() {
   const projects = [
     {
@@ -44,6 +45,19 @@ users order \n
       `,
       imageUrl: image2,
       url: 'https://sharqyeg.com/'
+    },
+    {
+      id : 11,
+      title : "university management system(elrwad ibnsina)",
+      description : `-Developed a web application for private college(ibn 
+sina),multi-user system (student,teacher, admin), 
+- the student can take exams and their exam graded automatically on the site see his schedule and 
+more, 
+-the teacher can make exams with its questions and answers  and see stats 
+about his subjects, 
+-the admin can import and export pdf and excel files, publish exams and reject and accept questions  make exam schedule and add students or teachers. And more features.`,
+imageUrl : image12,
+url : "https://elrawad-ibn-sina.com/"
     },
     {
       id: 3,
@@ -112,12 +126,13 @@ imageUrl : image9,
 url : "https://github.com/yousef2002307/laravel-project-quiz-app.git"
     },
     {
-      id : 10,
+      id : 12,
       title : "weather app using php",
       description : `I built a weather app using PHP . , dealt with external api using php Guzzle, It allows users to search for current weather conditions and get detailed information about the weather in their area.`,
 imageUrl : image11,
 url : "https://github.com/yousef2002307/weatherAppWithPhp.git"
-    }
+    },
+    
     // Add more projects as needed
   ];
 
