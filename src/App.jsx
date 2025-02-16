@@ -13,6 +13,7 @@ import image8 from './assets/images/ccapture.png';
 import image9 from './assets/images/apture.png';
 import image11 from './assets/images/Cwapture.png';
 import image12 from './assets/images/Capturesina.png';
+import image13 from './assets/images/tvshow.png';
 function App() {
   const projects = [
     {
@@ -131,6 +132,14 @@ url : "https://github.com/yousef2002307/laravel-project-quiz-app.git"
       description : `I built a weather app using PHP . , dealt with external api using php Guzzle, It allows users to search for current weather conditions and get detailed information about the weather in their area.`,
 imageUrl : image11,
 url : "https://github.com/yousef2002307/weatherAppWithPhp.git"
+    },
+
+    {
+      id : 13,
+      title : "tv show tracker app",
+      description : `I built a tv show tracker app using venilla js , css and html. It allows users to search for tv shows and get detailed information about them.`,
+imageUrl : image13,
+url : "https://helpful-tarsier-91a5be.netlify.app/"
     },
     
     // Add more projects as needed
