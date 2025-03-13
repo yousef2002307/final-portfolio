@@ -108,7 +108,7 @@ Technologies : php , Ajax, html, Css and bootstrap.
     {
       id: 20,
       title: 'not found agency(company website)',
-      description: `in this project create appointment booking system using Laravel , includes appointment booking and show avaliable times and book in automatic way and send remonders emails when meeting date is close and send email with meeting link, and contact us form with pdf attachment, and admin dashboard to the entire website design`,
+      description: `in this project create appointment booking system using Laravel , includes appointment booking and show avaliable times and book in automatic way and send remonders emails when meeting date is close and send email with meeting link, and contact us form with pdf attachment, and admin dashboard to the entire website design,SEO optimization.`,
       imageUrl: image14,
       url: 'https://notfound-agency.com/'
     },
