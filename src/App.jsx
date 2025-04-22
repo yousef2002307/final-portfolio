@@ -15,6 +15,9 @@ import image11 from './assets/images/Cwapture.png';
 import image12 from './assets/images/Capturesina.png';
 import image13 from './assets/images/tvshow.png';
 import image14 from './assets/images/Capture565.png';
+import image15 from './assets/images/chatcap.png';
+import image16 from './assets/images/hotel.png';
+import image17 from './assets/images/cart.png';
 function App() {
   const projects = [
     {
@@ -113,18 +116,26 @@ Technologies : php , Ajax, html, Css and bootstrap.
       url: 'https://notfound-agency.com/'
     },
     {
-      id: 7,
-      title: 'Chat app(Messenger clone)',
-      description: `in this project used websockets and SSE(server side events) to make real time chat app using Laravel and jquery, includes chat system like messenger.`,
-      imageUrl: image6,
-      url: 'https://github.com/yousef2002307/chatApp-Using-Laravel.git'
+      id: 30,
+      title: 'Chat app(Messenger clone) using php',
+      description: `in this project   SSE(server side events) to make real time chat app using php, jquery and ajax, includes chat system like messenger,send and recieve messages and seen and un seen messages and delete messages.`,
+      imageUrl: image15,
+      url: 'https://github.com/yousef2002307/chatapp.git'
     },
+    
     {
       id: 8,
       title: 'Advanced Ecommerce using Laravel (Rabeemall)',
       description: `integration with fawry pay and paymob and pay in installments with Vulu,Scout search,and polymorphic relation and SEO optimization and classic ecommerce features(cart,orders,etc).`,
       imageUrl: image8,
       url: 'https://rabeamall.com/'
+    },
+    {
+      id: 7,
+      title: 'Chat app(Messenger clone) using laravel',
+      description: `in this project used websockets and SSE(server side events) to make real time chat app using Laravel and jquery, includes chat system like messenger.`,
+      imageUrl: image6,
+      url: 'https://github.com/yousef2002307/chatApp-Using-Laravel.git'
     },
     {
       id : 9,
@@ -135,13 +146,26 @@ imageUrl : image9,
 url : "https://github.com/yousef2002307/laravel-project-quiz-app.git"
     },
     {
+      id : 40,
+      title : "hotel booking app admin dashboard using PHP",
+      description : `i built aan admin dashboard for hotel booking app using php.`,
+imageUrl : image16,
+url : "https://github.com/yousef2002307/hotel-managment-php_project.git"
+    },
+    {
       id : 12,
       title : "weather app using php",
       description : `I built a weather app using PHP . , dealt with external api using php Guzzle, It allows users to search for current weather conditions and get detailed information about the weather in their area.`,
 imageUrl : image11,
 url : "https://github.com/yousef2002307/weatherAppWithPhp.git"
     },
-
+    {
+      id : 60,
+      title : "shopping cart using php",
+      description : `I built a shopping cart using php. It allows users to add products to their cart and checkout using paypal.`,
+imageUrl : image17,
+url : "https://github.com/yousef2002307/shopping-cart-.git"
+    },
     {
       id : 13,
       title : "tv show tracker app",
