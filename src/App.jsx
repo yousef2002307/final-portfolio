@@ -19,6 +19,7 @@ import image15 from './assets/images/chatcap.png';
 import image16 from './assets/images/hotel.png';
 import image17 from './assets/images/cart.png';
 import resume from './assets/images/full stack20254.pdf'; // Make sure to add your resume file here
+import coverletter from './assets/images/coverletter.pdf';
 function App() {
   const projects = [
     {
