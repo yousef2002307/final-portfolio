@@ -200,7 +200,7 @@ url : "https://helpful-tarsier-91a5be.netlify.app/"
       marginTop: '20px'
     }}
   >
-    View Cv
+    View CV
   </button>
 </section>
       <section className="projects">
