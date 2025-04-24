@@ -18,6 +18,7 @@ import image14 from './assets/images/Capture565.png';
 import image15 from './assets/images/chatcap.png';
 import image16 from './assets/images/hotel.png';
 import image17 from './assets/images/cart.png';
+import resume from './assets/images/full stack20254.pdf'; // Make sure to add your resume file here
 function App() {
   const projects = [
     {
@@ -170,7 +171,7 @@ url : "https://github.com/yousef2002307/shopping-cart-.git"
       id : 13,
       title : "tv show tracker app",
       description : `I built a tv show tracker app using venilla js , css and html. It allows users to search for tv shows and get detailed information about them.`,
-imageUrl : image13,
+ImageUrl : image13,
 url : "https://helpful-tarsier-91a5be.netlify.app/"
     },
     
@@ -181,12 +182,26 @@ url : "https://helpful-tarsier-91a5be.netlify.app/"
     <>
   
 <section className="about-me">
-  
   <p>
     I am a full-stack Laravel/PHP web developer with over 1 year of experience and a computer science graduate. 
     I have completed more than 60 projects in web development, including over +10 live projects for actual clients 
     during my work experience, from start to finish.
   </p>
+  <button 
+    className="resume-button"
+    onClick={() => window.open(resume, '_blank')}
+    style={{
+      backgroundColor: '#007bff',
+      color: 'white',
+      padding: '10px 20px',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer',
+      marginTop: '20px'
+    }}
+  >
+    View Cv
+  </button>
 </section>
       <section className="projects">
         <h2>My Projects</h2>
