@@ -169,10 +169,10 @@ imageUrl : image17,
 url : "https://github.com/yousef2002307/shopping-cart-.git"
     },
     {
-      id : 13,
+      id : 133,
       title : "tv show tracker app",
       description : `I built a tv show tracker app using venilla js , css and html. It allows users to search for tv shows and get detailed information about them.`,
-ImageUrl : image13,
+imageUrl : image13,
 url : "https://helpful-tarsier-91a5be.netlify.app/"
     },
     
