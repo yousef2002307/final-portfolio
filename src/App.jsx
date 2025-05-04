@@ -184,7 +184,7 @@ url : "https://helpful-tarsier-91a5be.netlify.app/"
   
 <section className="about-me">
   <p>
-    I am a full-stack Laravel/PHP web developer with over 1.5 year of experience and a computer science graduate. 
+    I am a Backend  web developer with over 1.5 year of experience and a computer science graduate. 
     I have completed more than 60 projects in web development, including over +10 live projects for actual clients 
     during my work experience, from start to finish.
   </p>
