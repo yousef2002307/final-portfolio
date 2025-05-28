@@ -18,6 +18,9 @@ import image14 from './assets/images/Capture565.png';
 import image15 from './assets/images/chatcap.png';
 import image16 from './assets/images/hotel.png';
 import image17 from './assets/images/cart.png';
+import image18 from './assets/images/1.png';
+import image19 from './assets/images/6.png';
+import image20 from './assets/images/7.png';
 import resume from './assets/images/full stack20254.pdf'; // Make sure to add your resume file here
 import coverletter from './assets/images/coverletter.pdf';
 function App() {
@@ -167,6 +170,27 @@ url : "https://github.com/yousef2002307/weatherAppWithPhp.git"
       description : `I built a shopping cart using php. It allows users to add products to their cart and checkout using paypal.`,
 imageUrl : image17,
 url : "https://github.com/yousef2002307/shopping-cart-.git"
+    },
+    {
+      id : 61,
+      title : "Personal website using Wordpress",
+      description : `I built a personal website using Wordpress and Elementor and added some custom css and js. and needed plugins for the website.`,
+imageUrl : image18,
+url : "https://drive.google.com/drive/folders/1z6ln3vr18tRBxTsDLN_yCKaicgWTuhRJ?usp=drive_link"
+    },
+    {
+      id : 62,
+      title : "company website using Wordpress",
+      description : `I built a company website using Wordpress and Elementor and added some custom css and js. and needed plugins for the website.`,
+imageUrl : image19,
+url : "https://drive.google.com/drive/u/1/folders/1PawaqpQfqktxZQ-D5HbYMCZkizeZzj8g"
+    },
+    {
+      id : 63,
+      title : "blog website using Wordpress",
+      description : `I built a blog website using Wordpress and Gutenberg and Blocksy theme and custom taxonomies and added some custom css and js. and needed plugins for the website.`,
+imageUrl : image20,
+url : "https://drive.google.com/drive/folders/145A4OWyFzZ0HcbGxjoF9I_ynpw9TWwJw?usp=drive_link"
     },
     {
       id : 133,
