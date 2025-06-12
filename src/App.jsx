@@ -25,6 +25,8 @@ import image21 from './assets/images/Capture777.png';
 import resume from './assets/images/full stack20254.pdf'; // Make sure to add your resume file here
 import coverletter from './assets/images/coverletter.pdf';
 function App() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 9;
   const projects = [
     {
       id: 1,
@@ -214,6 +216,12 @@ url : "https://helpful-tarsier-91a5be.netlify.app/"
     // Add more projects as needed
   ];
 
+  // Pagination logic
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
   return (
     <>
   
@@ -242,13 +250,46 @@ url : "https://helpful-tarsier-91a5be.netlify.app/"
       <section className="projects">
         <h2>My Projects</h2>
         <div className="projects-grid">
-          {projects.map(project => (
+          {currentProjects.map(project => (
             <div key={project.id} className="card" onClick={() => window.open(project.url, '_blank')}>
               <img src={project.imageUrl} alt={project.title} />
               <h3>{project.title}</h3>
               <p>{project.description}</p>
             </div>
           ))}
+        </div>
+        <div className="pagination" style={{ textAlign: 'center', marginTop: '20px' }}>
+          <button 
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+            disabled={currentPage === 1}
+            style={{
+              backgroundColor: '#007bff',
+              color: 'white',
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              margin: '0 5px'
+            }}
+          >
+            Previous
+          </button>
+          <span style={{ margin: '0 10px' }}>Page {currentPage} of {totalPages}</span>
+          <button 
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+            disabled={currentPage === totalPages}
+            style={{
+              backgroundColor: '#007bff',
+              color: 'white',
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              margin: '0 5px'
+            }}
+          >
+            Next
+          </button>
         </div>
       </section>
     </>
