@@ -21,6 +21,7 @@ import image17 from './assets/images/cart.png';
 import image18 from './assets/images/1.png';
 import image19 from './assets/images/6.png';
 import image20 from './assets/images/7.png';
+import image21 from './assets/images/Capture777.png';
 import resume from './assets/images/full stack20254.pdf'; // Make sure to add your resume file here
 import coverletter from './assets/images/coverletter.pdf';
 function App() {
@@ -92,6 +93,16 @@ and more great features`,
       `,
       imageUrl: image4,
       url: 'https://pearl-store.net/'
+    },
+
+    {
+      id: 4445,
+      title: 'Multivendor restaurant-ecommerce(Daw2ni)',
+      description: ` 
+      this project is multi-vendor site and has 3 differnet panels(for customers,resturants,admin) and i worked with the rest of team on the 3 of them,added new features and fix different bugs , and secured the site agianst xss attacks
+      `,
+      imageUrl: image21,
+      url: 'https://board.dw2ni.com/locate/'
     },
     {
       id: 5,
