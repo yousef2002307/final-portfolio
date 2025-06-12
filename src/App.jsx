@@ -101,7 +101,7 @@ and more great features`,
       id: 4445,
       title: 'Multivendor restaurant-ecommerce(Daw2ni)',
       description: ` 
-      this project is multi-vendor site and has 3 differnet panels(for customers,resturants,admin) and i worked with the rest of team on the 3 of them,dealing with firebase in laarvel and making crud operation on firebase database,added new features and fix different bugs , and secured the site agianst xss attacks
+      this project is multi-vendor site and has 3 differnet panels(for customers,resturants,admin) and i worked with the rest of team on the 3 of them,dealing with firebase in laravel and making crud operation on firebase database,added new features and fix different bugs , and secured the site agianst xss attacks
       `,
       imageUrl: image21,
       url: 'https://board.dw2ni.com/locate/'
