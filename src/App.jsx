@@ -139,7 +139,7 @@ Technologies : php , Ajax, html, Css and bootstrap.
       id: 4446,
       title: 'Driver app Dashboard using Laravel And Javascript(Noah)',
       description: ` 
-     this project connects with firebase and do crud opertions on collections like plans and drivers and control content of pages like privacy policy and terms and conditions and so on.
+     admin panel connects with firebase and do crud opertions on collections like plans and drivers and control content of pages like privacy policy and terms and conditions and so on.
       `,
       imageUrl: image22,
       url: 'https://admin.noah-iq.com/'
