@@ -22,6 +22,7 @@ import image18 from './assets/images/1.png';
 import image19 from './assets/images/6.png';
 import image20 from './assets/images/7.png';
 import image21 from './assets/images/Capture777.png';
+import image22 from './assets/images/capture99.png';
 import resume from './assets/images/full stack20254.pdf'; // Make sure to add your resume file here
 import coverletter from './assets/images/coverletter.pdf';
 function App() {
@@ -106,6 +107,7 @@ and more great features`,
       imageUrl: image21,
       url: 'https://board.dw2ni.com/locate/'
     },
+   
     {
       id: 5,
       title: 'Coffe shop(coffee point)',
@@ -132,6 +134,15 @@ Technologies : php , Ajax, html, Css and bootstrap.
       description: `in this project create appointment booking system using Laravel , includes appointment booking and show avaliable times and book in automatic way and send remonders emails when meeting date is close and send email with meeting link, and contact us form with pdf attachment, and admin dashboard to the entire website design,SEO optimization.`,
       imageUrl: image14,
       url: 'https://notfound-agency.com/'
+    },
+    {
+      id: 4446,
+      title: 'Driver app Dashboard using Laravel And Javascript(Noah)',
+      description: ` 
+     this project connects with firebase and do crud opertions on collections like plans and drivers and control content of pages like privacy policy and terms and conditions and so on.
+      `,
+      imageUrl: image22,
+      url: 'https://admin.noah-iq.com/'
     },
     {
       id: 30,
