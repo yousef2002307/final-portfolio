@@ -269,39 +269,21 @@ url : "https://helpful-tarsier-91a5be.netlify.app/"
             </div>
           ))}
         </div>
-        <div className="pagination" style={{ textAlign: 'center', marginTop: '20px' }}>
-          <button 
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-            disabled={currentPage === 1}
-            style={{
-              backgroundColor: '#007bff',
-              color: 'white',
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              margin: '0 5px'
-            }}
-          >
-            Previous
-          </button>
-          <span style={{ margin: '0 10px' }}>Page {currentPage} of {totalPages}</span>
-          <button 
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-            disabled={currentPage === totalPages}
-            style={{
-              backgroundColor: '#007bff',
-              color: 'white',
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              margin: '0 5px'
-            }}
-          >
-            Next
-          </button>
-        </div>
+        <div className="pagination">
+    <button 
+      onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+      disabled={currentPage === 1}
+    >
+      Previous
+    </button>
+    <span>Page {currentPage} of {totalPages}</span>
+    <button 
+      onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+      disabled={currentPage === totalPages}
+    >
+      Next
+    </button>
+  </div>
       </section>
     </>
   );
