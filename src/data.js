@@ -123,7 +123,7 @@ Technologies : php , Ajax, html, Css and bootstrap.
     },
     {
       id: 45446,
-      title: 'syria Way (Travels web App for bus owners and tranport owners)',
+      title: 'Syria Way(Travels web App for bus owners and tranport owners)',
       description: `in this project i worked on Reservations and feedback and payment managments,tickeets, and on admin dashboard i worked on plans managment and transport owners managment and secuirity like protecting agiants xss attacks, i worked on both admin and transport owner dashboard and use roles and premmissions package ,connected with firebase,and more other features.`,
       imageUrl: image23,
       url: 'https://test.board.syria-way.com/'
