@@ -19,6 +19,7 @@ import image19 from './assets/images/6.png';
 import image20 from './assets/images/7.png';
 import image21 from './assets/images/Capture777.png';
 import image22 from './assets/images/capture99.png';
+import image23 from './assets/images/Capturesyria.png';
  const data = [
     {
       id: 1,
@@ -89,6 +90,7 @@ and more great features`,
       url: 'https://pearl-store.net/'
     },
 
+
     {
       id: 4445,
       title: 'Multivendor restaurant-ecommerce(Daw2ni)',
@@ -119,6 +121,14 @@ Technologies : php , Ajax, html, Css and bootstrap.
       imageUrl: image7,
       url: 'https://github.com/yousef2002307/subject-sysstem.git'
     },
+    {
+      id: 45446,
+      title: 'syria Way (Travels web App for bus owners and tranport owners)',
+      description: `in this project i worked on Reservations and feedback and payment managments,tickeets, and on admin dashboard i worked on plans managment and transport owners managment and secuirity like protecting agiants xss attacks, i worked on both admin and transport owner dashboard and use roles and premmissions package ,connected with firebase,and more other features.`,
+      imageUrl: image23,
+      url: 'https://test.board.syria-way.com/'
+    },
+
     {
       id: 20,
       title: 'not found agency(company website)',
