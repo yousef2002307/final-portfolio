@@ -143,7 +143,7 @@ Technologies : php , Ajax, html, Css and bootstrap.
      admin panel connects with firebase and do crud opertions on collections like plans and drivers and control content of pages like privacy policy and terms and conditions and so on.
       `,
       imageUrl: image22,
-      url: 'https://admin.noah-iq.com/'
+      url: 'https://noah-iq.com/'
     },
     {
       id: 30,
