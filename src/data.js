@@ -33,7 +33,7 @@ token , Admin dashboard that all ow admin to make
 quiz , give rating and determine whether student 
 attendant or not , and  other features. `,
       imageUrl: image,
-      url: 'https://omarroshdy.com/'
+      url: 'https://drive.google.com/drive/folders/1NbsuIPlmn7hAIdHpfW_ntO4H4NYUQmsO?usp=drive_link'
     },
     
     {
