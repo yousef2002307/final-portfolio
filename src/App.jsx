@@ -46,7 +46,7 @@ function App() {
               <h2>My Projects</h2>
               <div className="projects-grid">
                 {currentProjects.map(project => (
-                 <div key={project.id} className="card">
+                 <div key={project.id} className="card" >
   <div className="card-content">
     <img src={project.imageUrl} alt={project.title} />
     <h3>{project.title}</h3>
