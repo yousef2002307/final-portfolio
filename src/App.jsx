@@ -34,7 +34,7 @@ function App() {
                 I have completed more than 60 projects in web development, including over +13 live projects for actual clients 
                 during my work experience, from start to finish.
               </p>
-              <button 
+              {/* <button 
                 className="resume-button"
                 onClick={() => window.open('/resume.pdf', '_blank')}
                 style={{
@@ -48,7 +48,7 @@ function App() {
                 }}
               >
                 View CV
-              </button>
+              </button> */}
             </section>
             <section className="projects">
               <h2>My Projects</h2>
