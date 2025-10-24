@@ -8,7 +8,7 @@ import coverletter from './assets/images/coverletter.pdf';
 import data from './data';
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 9;
+  const projectsPerPage = 3;
   const projects = data
 
   // Pagination logic

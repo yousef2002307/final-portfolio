@@ -20,9 +20,40 @@ import image20 from './assets/images/7.png';
 import image21 from './assets/images/Capture777.png';
 import image22 from './assets/images/capture99.png';
 import image23 from './assets/images/Capturesyria.png';
+import fhar from './assets/images/fhar.png';
  const data = [
-    {
+
+   {
       id: 1,
+      title: 'FharGo – Fleet Management System',
+      description: `
+      
+A fleet management system that enables companies to monitor their drivers and trips while working on Uber, manage their accounts, subscriptions, vehicles, and generate detailed reports and invoices. Fully integrated with Uber API.
+
+Tech Stack: Laravel, Node.js, Redis, MySQL
+
+Key Contributions:
+
+Developed and optimized backend APIs for the mobile app and web dashboards.
+
+Improved system performance to handle millions of records using database partitioning, caching (Redis), indexing, and cursor pagination.
+
+Implemented a real-time notification system using Laravel Reverb.
+
+Built a complete authentication system (login, registration, OTP verification, password reset).
+
+Implemented Excel/PDF exports handling millions of rows using queues, batches, and chunking.
+
+Automated daily reports for drivers and vehicles using Job Coordinator Pattern.
+
+Developed CRUD operations and dashboard statistics for companies, drivers, and vehicles.
+      
+      `,
+      imageUrl: fhar,
+      url: 'https://drive.google.com/drive/folders/1uOUJd9FouzIDtOfd9EKcgUnVHS15oWQ-?usp=sharing'
+    },
+    {
+      id: 1446456,
       title: 'learn hub(Mr.Omar)',
       description: `Developed an Api from start to finish using Laravel . 
  upload large videos to vimeo Api through Laravel, login 
