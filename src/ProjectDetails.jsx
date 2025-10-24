@@ -9,7 +9,7 @@ const ProjectDetails = () => {
     return (
       <div className="project-not-found">
         <h2>Project not found</h2>
-        <Link to="/">Back to Home</Link>
+        <Link to="/" className="back-button">← Back to Home</Link>
       </div>
     );
   }

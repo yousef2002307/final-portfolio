@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import ProjectDetails from './ProjectDetails';
 import data from './data';
@@ -8,6 +8,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 3;
   const projects = data;
+  const navigate = useNavigate();
 
   // Pagination logic
   const indexOfLastProject = currentPage * projectsPerPage;
@@ -15,8 +16,15 @@ function App() {
   const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
   const totalPages = Math.ceil(projects.length / projectsPerPage);
 
+  const handleCardClick = (projectId, e) => {
+    // Only navigate if the click wasn't on the View Details button
+    if (!e.target.closest('.view-details-button')) {
+      navigate(`/project/${projectId}`);
+    }
+  };
+
   return (
-    <Router>
+    <div className="app">
       <Routes>
         <Route path="/" element={
           <>
@@ -46,19 +54,24 @@ function App() {
               <h2>My Projects</h2>
               <div className="projects-grid">
                 {currentProjects.map(project => (
-                 <div key={project.id} className="card" >
-  <div className="card-content">
-    <img src={project.imageUrl} alt={project.title} />
-    <h3>{project.title}</h3>
-    <p>{project.description.substring(0, 100)}...</p>
-    <Link 
-      to={`/project/${project.id}`} 
-      className="view-details-button"
-    >
-      View Details
-    </Link>
-  </div>
-</div>
+                  <div 
+                    key={project.id} 
+                    className="card"
+                    onClick={(e) => handleCardClick(project.id, e)}
+                  >
+                    <div className="card-content">
+                      <img src={project.imageUrl} alt={project.title} />
+                      <h3>{project.title}</h3>
+                      <p>{project.description.substring(0, 100)}...</p>
+                      <Link 
+                        to={`/project/${project.id}`} 
+                        className="view-details-button"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View Details
+                      </Link>
+                    </div>
+                  </div>
                 ))}
               </div>
               <div className="pagination">
@@ -81,7 +94,7 @@ function App() {
         } />
         <Route path="/project/:id" element={<ProjectDetails />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 
