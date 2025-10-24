@@ -296,6 +296,129 @@
   margin: 0 10px;
   font-size: 1rem;
 }
+/* Add these styles to your existing App.css */
+.project-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.view-project-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.view-project-button:hover {
+  background-color: #0056b3;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.project-description p {
+  margin-bottom: 1rem;
+}
+
+/* Update the card style to make it more clickable */
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.project-not-found {
+  text-align: center;
+  padding: 2rem;
+}
+
+.project-not-found h2 {
+  margin-bottom: 1rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.view-details-button {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  align-self: flex-center;
+  margin-top: 1rem;
+}
+
+.view-details-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
 
 /* Mobile styles */
 @media (max-width: 600px) {
