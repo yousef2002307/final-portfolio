@@ -70,6 +70,11 @@ function App() {
                       >
                         View Details
                       </Link>
+                      <button   className="view-details-button">
+                        <a className='a' href={project.url} target="_blank" rel="noopener noreferrer">
+                          view project
+                        </a>
+                      </button>
                     </div>
                   </div>
                 ))}

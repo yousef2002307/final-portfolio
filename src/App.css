@@ -419,7 +419,11 @@
   color: white;
 }
 
+.a {
+  color: white;
+  text-decoration: none;
 
+}
 /* Mobile styles */
 @media (max-width: 600px) {
   .pagination {
