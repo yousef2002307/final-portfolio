@@ -23,35 +23,7 @@ import image23 from './assets/images/Capturesyria.png';
 import fhar from './assets/images/fhar.png';
  const data = [
 
-   {
-      id: 1,
-      title: 'FharGo – Fleet Management System',
-      description: `
-      
-A fleet management system that enables companies to monitor their drivers and trips while working on Uber, manage their accounts, subscriptions, vehicles, and generate detailed reports and invoices. Fully integrated with Uber API.
-
-Tech Stack: Laravel, Node.js, Redis, MySQL
-
-Key Contributions:
-
-Developed and optimized backend APIs for the mobile app and web dashboards.
-
-Improved system performance to handle millions of records using database partitioning, caching (Redis), indexing, and cursor pagination.
-
-Implemented a real-time notification system using Laravel Reverb.
-
-Built a complete authentication system (login, registration, OTP verification, password reset).
-
-Implemented Excel/PDF exports handling millions of rows using queues, batches, and chunking.
-
-Automated daily reports for drivers and vehicles using Job Coordinator Pattern.
-
-Developed CRUD operations and dashboard statistics for companies, drivers, and vehicles.
-      
-      `,
-      imageUrl: fhar,
-      url: 'https://drive.google.com/drive/folders/1uOUJd9FouzIDtOfd9EKcgUnVHS15oWQ-?usp=sharing'
-    },
+  
     {
       id: 1446456,
       title: 'learn hub(Mr.Omar)',
@@ -95,6 +67,35 @@ about his subjects,
 -the admin can import and export pdf and excel files, publish exams and reject and accept questions  make exam schedule and add students or teachers. And more features.`,
 imageUrl : image12,
 url : "https://elrawad-ibn-sina.com/"
+    },
+     {
+      id: 1,
+      title: 'FharGo – Fleet Management System',
+      description: `
+      
+A fleet management system that enables companies to monitor their drivers and trips while working on Uber, manage their accounts, subscriptions, vehicles, and generate detailed reports and invoices. Fully integrated with Uber API.
+
+Tech Stack: Laravel, Node.js, Redis, MySQL
+
+Key Contributions:
+
+Developed and optimized backend APIs for the mobile app and web dashboards.
+
+Improved system performance to handle millions of records using database partitioning, caching (Redis), indexing, and cursor pagination.
+
+Implemented a real-time notification system using Laravel Reverb.
+
+Built a complete authentication system (login, registration, OTP verification, password reset).
+
+Implemented Excel/PDF exports handling millions of rows using queues, batches, and chunking.
+
+Automated daily reports for drivers and vehicles using Job Coordinator Pattern.
+
+Developed CRUD operations and dashboard statistics for companies, drivers, and vehicles.
+      
+      `,
+      imageUrl: fhar,
+      url: 'https://drive.google.com/drive/folders/1uOUJd9FouzIDtOfd9EKcgUnVHS15oWQ-?usp=sharing'
     },
     {
       id: 3,
