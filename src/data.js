@@ -21,6 +21,7 @@ import image21 from './assets/images/Capture777.png';
 import image22 from './assets/images/capture99.png';
 import image23 from './assets/images/Capturesyria.png';
 import fhar from './assets/images/fhar.png';
+import acti from './assets/images/Captureacti.png';
  const data = [
 
   
@@ -96,6 +97,32 @@ Developed CRUD operations and dashboard statistics for companies, drivers, and v
       `,
       imageUrl: fhar,
       url: 'https://drive.google.com/drive/folders/1uOUJd9FouzIDtOfd9EKcgUnVHS15oWQ-?usp=sharing'
+    },
+    {
+      id: 334489,
+      title: 'ActiService',
+      description: ` Project: ActiveService (SaaS Service Marketplace Platform) Role: Backend Developer: Laravel 12, MySQL, Redis, RESTful APIs, Git
+
+Project Description: Architected and developed a robust multi-tenant SaaS platform connecting service providers with customers. The system facilitates end-to-end service management, from booking requests to final invoicing, featuring a complex subscription engine for service providers.
+
+Key Contributions:
+Core Architecture: Designed a modular API-first architecture separating MobileApp (Client), Provider (Vendor), and SuperAdmin (Backoffice) interaction layers, ensuring scalability and security.
+Subscription & Billing Engine: Engineered a custom subscription system integrating Pay.nl for recurring payments. Implemented automated retry logic (dunning), proration, and PDF invoice generation using laravel-dompdf.
+Service Marketplace Logic: Built a dynamic bidding system where users post "Service Requests" and providers submit "Offers" based on their subscription tier and service capabilities.
+Advanced Localization: Implemented full English/Arabic localization support across API responses and generated PDF contracts using spatie/laravel-translatable.
+Performance Optimization: Integrated Redis for caching frequently accessed data (Service/Sub-service lists) and implemented background queue workers for heavy tasks like email notifications and document generation.
+Quality Assurance: Established a rigorous testing environment using PHPUnit and seeders to simulate complex many-to-many relationships between Companies, Services, and Users.`,
+      imageUrl: acti,
+      url: 'https://drive.google.com/drive/folders/1pUijpmwxnvu4Y0tPZZnu8upa6P1hf47A?usp=drive_link'
+    },
+    {
+      id: 4,
+      title: 'Online Store(pearl store)',
+      description: ` In this project, used PHP / Laravel to make the store, has full ecommerce features, includes admin dashboard, login and register,
+      has online payment (using saded payment gateway in Qatar), cart , order, rating and faviourte functionality and nuch more.
+      `,
+      imageUrl: image4,
+      url: 'https://pearl-store.net/'
     },
     {
       id: 3,
