@@ -30,7 +30,7 @@ function App() {
           <>
             <section className="about-me">
               <p>
-                I am a Backend web developer with over 1.5 years of experience and a computer science graduate. 
+                I am a Backend web developer with over 2 years of experience and a computer science graduate. 
                 I have completed more than 60 projects in web development, including over +13 live projects for actual clients 
                 during my work experience, from start to finish.
               </p>
