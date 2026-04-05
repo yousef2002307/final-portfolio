@@ -39,37 +39,7 @@ attendant or not , and  other features. `,
       imageUrl: image,
       url: 'https://drive.google.com/drive/folders/1NbsuIPlmn7hAIdHpfW_ntO4H4NYUQmsO?usp=drive_link'
     },
-    
-    {
-      id: 2,
-      title: 'Food shooping and delivery (sharaqy)',
-      description: `
-       -Developed a web application for a food restaurant that 
-helps users to view products ,  order them and add 
-them to cart \n.  
--multilingual support , payment gateway integration(paymob),
- Admin dashboard that help owner of app to get statistics about orders and products, \n
- - to change products info to do CRUD operation on users , to view 
-users order \n
- - Contact us Form.
-      `,
-      imageUrl: image2,
-      url: 'https://sharqyeg.com/'
-    },
-    {
-      id : 11,
-      title : "university management system(elrwad ibnsina)",
-      description : `-Developed a web application for private college(ibn 
-sina),multi-user system (student,teacher, admin), 
-- the student can take exams and their exam graded automatically on the site see his schedule and 
-more, 
--the teacher can make exams with its questions and answers  and see stats 
-about his subjects, 
--the admin can import and export pdf and excel files, publish exams and reject and accept questions  make exam schedule and add students or teachers. And more features.`,
-imageUrl : image12,
-url : "https://elrawad-ibn-sina.com/"
-    },
-     {
+      {
       id: 1,
       title: 'FharGo – Fleet Management System',
       description: `
@@ -115,6 +85,36 @@ Quality Assurance: Established a rigorous testing environment using PHPUnit and 
       imageUrl: acti,
       url: 'https://drive.google.com/drive/folders/1pUijpmwxnvu4Y0tPZZnu8upa6P1hf47A?usp=drive_link'
     },
+    {
+      id: 2,
+      title: 'Food shooping and delivery (sharaqy)',
+      description: `
+       -Developed a web application for a food restaurant that 
+helps users to view products ,  order them and add 
+them to cart \n.  
+-multilingual support , payment gateway integration(paymob),
+ Admin dashboard that help owner of app to get statistics about orders and products, \n
+ - to change products info to do CRUD operation on users , to view 
+users order \n
+ - Contact us Form.
+      `,
+      imageUrl: image2,
+      url: 'https://sharqyeg.com/'
+    },
+    {
+      id : 11,
+      title : "university management system(elrwad ibnsina)",
+      description : `-Developed a web application for private college(ibn 
+sina),multi-user system (student,teacher, admin), 
+- the student can take exams and their exam graded automatically on the site see his schedule and 
+more, 
+-the teacher can make exams with its questions and answers  and see stats 
+about his subjects, 
+-the admin can import and export pdf and excel files, publish exams and reject and accept questions  make exam schedule and add students or teachers. And more features.`,
+imageUrl : image12,
+url : "https://elrawad-ibn-sina.com/"
+    },
+   
     {
       id: 4,
       title: 'Online Store(pearl store)',
