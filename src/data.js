@@ -139,15 +139,7 @@ and more great features`,
       imageUrl: image3,
       url: 'https://github.com/yousef2002307/cli-managment-final2.git'
     },
-    {
-      id: 4,
-      title: 'Online Store(pearl store)',
-      description: ` In this project, used PHP / Laravel to make the store, has full ecommerce features, includes admin dashboard, login and register,
-      has online payment (using saded payment gateway in Qatar), cart , order, rating and faviourte functionality and nuch more.
-      `,
-      imageUrl: image4,
-      url: 'https://pearl-store.net/'
-    },
+   
 
 
     {
