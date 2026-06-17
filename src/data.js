@@ -20,6 +20,7 @@ import image20 from './assets/images/7.png';
 import image21 from './assets/images/dw2ni.png';
 import image22 from './assets/images/capture99.png';
 import image23 from './assets/images/Capturesyria.png';
+import image24 from './assets/images/lasscar.png';
 import fhar from './assets/images/fhar.png';
 import acti from './assets/images/Captureacti.png';
  const data = [
@@ -33,6 +34,18 @@ It includes essential modules such as interactive About Us and FAQ sections, a C
       `,
       imageUrl: image21,
       url: 'https://drive.google.com/drive/folders/1OEW4i2GFvpLzL0U_m-n-_TNKiI_fg6We?usp=sharing'
+    },
+       {
+      id: 44435,
+      title: 'LassCar(Uber of syria)',
+      description: ` 
+     A smart Syrian land transport platform built for efficient ride-booking and automated fleet management.
+Powered by a robust Laravel backend handling complex business logic, secure wallet transactions, and role-based access control.
+Real-time driver tracking and dynamic route pricing tailored for local transport networks.
+Comprehensive Superadmin dashboard featuring automated driver verification and digital wallet management.
+      `,
+      imageUrl: image24,
+      url: 'https://drive.google.com/drive/folders/1qh-VSEG5r8OkPrD9F5CWaEyQ0Z0rbxin?usp=sharing'
     },
   
     {
