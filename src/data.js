@@ -17,13 +17,23 @@ import image17 from './assets/images/cart.png';
 import image18 from './assets/images/1.png';
 import image19 from './assets/images/6.png';
 import image20 from './assets/images/7.png';
-import image21 from './assets/images/Capture777.png';
+import image21 from './assets/images/dw2ni.png';
 import image22 from './assets/images/capture99.png';
 import image23 from './assets/images/Capturesyria.png';
 import fhar from './assets/images/fhar.png';
 import acti from './assets/images/Captureacti.png';
  const data = [
-
+    {
+      id: 4445,
+      title: 'Multivendor web & mobile application(Daw2ni)',
+      description: ` 
+      Dw2ni is a specialized logistics platform designed to manage and streamline medical delivery operations between pharmacies, drivers, and administrators.
+The project features a dedicated Marketing Website that allows pharmacies and drivers to easily register, locate themselves on a map, and download the mobile applications.
+It includes essential modules such as interactive About Us and FAQ sections, a Contact Us form, and a flexible payment system supporting both Subscription Packages and Commission-based models. and i worked on the backend of this project finish the entire driver app and worked on superadmin dashboard, this project have advanced features like live tracking 
+      `,
+      imageUrl: image21,
+      url: 'https://drive.google.com/drive/folders/1OEW4i2GFvpLzL0U_m-n-_TNKiI_fg6We?usp=sharing'
+    },
   
     {
       id: 1446456,
@@ -142,15 +152,7 @@ and more great features`,
    
 
 
-    {
-      id: 4445,
-      title: 'Multivendor restaurant-ecommerce(Daw2ni)',
-      description: ` 
-      this project is multi-vendor site and has 3 differnet panels(for customers,resturants,admin) and i worked with the rest of team on the 3 of them,dealing with firebase in laravel and making crud operation on firebase database,added new features and fix different bugs , and secured the site agianst xss attacks
-      `,
-      imageUrl: image21,
-      url: 'https://board.dw2ni.com/locate/'
-    },
+
    
     {
       id: 5,
