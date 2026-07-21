@@ -44,7 +44,7 @@ export default function About() {
             {/* Narrative */}
             <div className="md:col-span-3">
               <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
-                I&apos;m a full-stack web developer with more than{' '}
+                I&apos;m a full-stack web developer with more22 than{' '}
                 <span className="text-white">2 years of experience</span> and a
                 computer-science graduate. I&apos;ve delivered more than{' '}
                 <span className="text-white">60 projects</span> in web
