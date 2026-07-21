@@ -19,8 +19,14 @@ function App() {
   useEffect(() => {
     if (!sessionStorage.getItem('visit_logged')) {
       fetch('/api/log-visit', { method: 'POST' })
-        .then(res => { if (res.ok) sessionStorage.setItem('visit_logged', 'true'); })
-        .catch(() => {}); // silent fail — never break the UI
+        .then(res => {
+          console.log('[Telegram] /api/log-visit status:', res.status);
+          return res.json().then(data => {
+            console.log('[Telegram] response:', data);
+            if (res.ok) sessionStorage.setItem('visit_logged', 'true');
+          });
+        })
+        .catch(err => console.error('[Telegram] fetch error:', err));
     }
   }, []);
 
