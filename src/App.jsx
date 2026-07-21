@@ -18,7 +18,24 @@ function App() {
   // sessionStorage guard prevents duplicate pings on in-app navigation.
   useEffect(() => {
     if (!sessionStorage.getItem('visit_logged')) {
-      fetch('/api/log-visit', { method: 'POST' })
+      // Collect everything the browser exposes safely
+      const clientData = {
+        screen:     `${screen.width}x${screen.height}`,
+        viewport:   `${window.innerWidth}x${window.innerHeight}`,
+        language:   navigator.language || 'Unknown',
+        timezone:   Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+        referrer:   document.referrer || 'Direct',
+        connection: navigator.connection?.effectiveType || 'Unknown',
+        platform:   navigator.platform || 'Unknown',
+        touch:      navigator.maxTouchPoints > 0 ? 'Yes' : 'No',
+        cookieEnabled: navigator.cookieEnabled ? 'Yes' : 'No',
+      };
+
+      fetch('/api/log-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(clientData),
+      })
         .then(res => {
           console.log('[Telegram] /api/log-visit status:', res.status);
           return res.json().then(data => {
