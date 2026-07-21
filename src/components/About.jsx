@@ -45,7 +45,7 @@ export default function About() {
             <div className="md:col-span-3">
               <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
                 I&apos;m a full-stack web developer with over{' '}
-                <span className="text-white">2 years of experience</span> and a
+                <span className="text-white">4 years of experience</span> and a
                 computer-science graduate. I&apos;ve delivered more than{' '}
                 <span className="text-white">60 projects</span> in web
                 development, including 13+ live products for real clients — from
