@@ -18,8 +18,13 @@ function App() {
   // sessionStorage guard prevents duplicate pings on in-app navigation.
   useEffect(() => {
     if (!sessionStorage.getItem('visit_logged')) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const ec = urlParams.get('ec');
+
       // Collect everything the browser exposes safely
       const clientData = {
+        ...(ec ? { ec } : {}),
+        url:        window.location.href,
         screen:     `${screen.width}x${screen.height}`,
         viewport:   `${window.innerWidth}x${window.innerHeight}`,
         language:   navigator.language || 'Unknown',

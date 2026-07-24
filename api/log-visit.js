@@ -1,4 +1,4 @@
-﻿// api/log-visit.js
+// api/log-visit.js
 // Vercel Serverless Function — runs server-side only. Token never exposed to browser.
 
 export default async function handler(req, res) {
@@ -21,6 +21,18 @@ export default async function handler(req, res) {
   let client = {};
   try { client = await req.json(); } catch (_) {}
 
+  // ── Extract 'ec' URL parameter if present ──────────────────────────────────
+  let ecParam = req.query?.ec || client.ec || null;
+  if (!ecParam && (client.url || referer)) {
+    try {
+      const sourceUrl = client.url || (referer !== 'Direct' ? referer : '');
+      if (sourceUrl) {
+        const parsed = new URL(sourceUrl, 'http://localhost');
+        ecParam = parsed.searchParams.get('ec');
+      }
+    } catch (_) {}
+  }
+
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId   = process.env.TELEGRAM_CHAT_ID;
 
@@ -41,7 +53,13 @@ export default async function handler(req, res) {
   // ── Format timestamp (UTC) ─────────────────────────────────────────────────
   const now = new Date().toUTCString();
 
+  const ecHeader = ecParam ? [
+    '🏢 🔥 *[ ' + ecParam + ' HAS ENTERED! ]* 🔥 🏢',
+    ''
+  ] : [];
+
   const message = [
+    ...ecHeader,
     '🚨 *زائر جديد على البورتفوليو!*',
     '',
     '📍 *الموقع*',
