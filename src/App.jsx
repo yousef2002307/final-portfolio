@@ -9,10 +9,14 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
+import Fireworks from './components/Fireworks';
 
 function App() {
   // The currently-selected project. When set, the details modal renders on top.
   const [selectedProject, setSelectedProject] = useState(null);
+
+  // Hide Navbar during the fireworks intro; show it once fireworks finish.
+  const [showNav, setShowNav] = useState(false);
 
   // Log the visit once per session via a Vercel serverless function.
   // sessionStorage guard prevents duplicate pings on in-app navigation.
@@ -70,9 +74,19 @@ function App() {
 
   return (
     <div className="relative min-h-screen">
+      <Fireworks onDone={() => setShowNav(true)} />
       <AuroraBackground />
 
-      <Navbar />
+      {/* Navbar fades in smoothly after fireworks finish */}
+      <div
+        style={{
+          transition: 'opacity 0.6s ease',
+          opacity: showNav ? 1 : 0,
+          pointerEvents: showNav ? 'auto' : 'none',
+        }}
+      >
+        <Navbar />
+      </div>
 
       <main>
         <Hero />
