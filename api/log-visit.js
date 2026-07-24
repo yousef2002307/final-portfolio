@@ -54,7 +54,7 @@ export default async function handler(req, res) {
   const now = new Date().toUTCString();
 
   const ecHeader = ecParam ? [
-    '🏢 🔥 *[ ' + ecParam + ' HAS ENTERED! ]* 🔥 🏢',
+    `🏢 🔥 *[ ${ecParam} HAS ENTERED! ]* 🔥 🏢`,
     ''
   ] : [];
 
