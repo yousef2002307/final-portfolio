@@ -17,39 +17,55 @@ function App() {
   // Log the visit once per session via a Vercel serverless function.
   // sessionStorage guard prevents duplicate pings on in-app navigation.
   useEffect(() => {
-    if (!sessionStorage.getItem('visit_logged')) {
-      const urlParams = new URLSearchParams(window.location.search);
-      const ec = urlParams.get('ec');
+    try {
+      if (sessionStorage.getItem('visit_logged')) return;
+    } catch (_) {}
 
-      // Collect everything the browser exposes safely
-      const clientData = {
-        ...(ec ? { ec } : {}),
-        url:        window.location.href,
-        screen:     `${screen.width}x${screen.height}`,
-        viewport:   `${window.innerWidth}x${window.innerHeight}`,
-        language:   navigator.language || 'Unknown',
-        timezone:   Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
-        referrer:   document.referrer || 'Direct',
-        connection: navigator.connection?.effectiveType || 'Unknown',
-        platform:   navigator.platform || 'Unknown',
-        touch:      navigator.maxTouchPoints > 0 ? 'Yes' : 'No',
-        cookieEnabled: navigator.cookieEnabled ? 'Yes' : 'No',
-      };
+    const urlParams = new URLSearchParams(window.location.search);
+    const ec = urlParams.get('ec');
 
-      fetch('/api/log-visit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(clientData),
+    let screenRes = 'Unknown';
+    try {
+      if (typeof window !== 'undefined' && window.screen) {
+        screenRes = `${window.screen.width}x${window.screen.height}`;
+      }
+    } catch (_) {}
+
+    let tz = 'Unknown';
+    try {
+      tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown';
+    } catch (_) {}
+
+    const clientData = {
+      ...(ec ? { ec } : {}),
+      url:        window.location.href,
+      screen:     screenRes,
+      viewport:   typeof window !== 'undefined' ? `${window.innerWidth}x${window.innerHeight}` : 'Unknown',
+      language:   navigator?.language || 'Unknown',
+      timezone:   tz,
+      referrer:   document.referrer || 'Direct',
+      connection: navigator?.connection?.effectiveType || 'Unknown',
+      platform:   navigator?.platform || 'Unknown',
+      touch:      (navigator?.maxTouchPoints > 0) ? 'Yes' : 'No',
+      cookieEnabled: navigator?.cookieEnabled ? 'Yes' : 'No',
+    };
+
+    fetch('/api/log-visit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(clientData),
+      keepalive: true,
+    })
+      .then(res => {
+        console.log('[Telegram] /api/log-visit status:', res.status);
+        return res.json().then(data => {
+          console.log('[Telegram] response:', data);
+          if (res.ok) {
+            try { sessionStorage.setItem('visit_logged', 'true'); } catch (_) {}
+          }
+        });
       })
-        .then(res => {
-          console.log('[Telegram] /api/log-visit status:', res.status);
-          return res.json().then(data => {
-            console.log('[Telegram] response:', data);
-            if (res.ok) sessionStorage.setItem('visit_logged', 'true');
-          });
-        })
-        .catch(err => console.error('[Telegram] fetch error:', err));
-    }
+      .catch(err => console.error('[Telegram] fetch error:', err));
   }, []);
 
   return (

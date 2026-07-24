@@ -40,10 +40,14 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Missing env vars' });
   }
 
-  // ── Detect device type from User-Agent ─────────────────────────────────────
+  // ── Detect device type & LinkedIn App from User-Agent / Referer ───────────
+  const isLinkedIn = /LinkedIn/i.test(ua) || /linkedin|lnkd\.in/i.test(referer) || /linkedin/i.test(client.referrer || '');
   const isMobile  = /Mobi|Android|iPhone|iPad/i.test(ua);
   const isTablet  = /iPad|Tablet/i.test(ua);
-  const deviceType = isTablet ? '📱 Tablet' : isMobile ? '📱 Mobile' : '🖥️ Desktop';
+  let deviceType  = isTablet ? '📱 Tablet' : isMobile ? '📱 Mobile' : '🖥️ Desktop';
+  if (isLinkedIn) {
+    deviceType += ' (LinkedIn App 💼)';
+  }
 
   // ── Google Maps link if coordinates available ──────────────────────────────
   const mapsLink = lat && lon
