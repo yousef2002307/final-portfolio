@@ -2,19 +2,40 @@ import { useEffect, useRef, useState } from 'react';
 
 /**
  * Full-screen Fireworks entrance animation.
+ * - Runs ONCE per browser session (sessionStorage guard).
  * - Dark overlay covers the entire screen during the show.
  * - Fast rockets with motion-blur trails (fill instead of clearRect).
  * - Efficient canvas: reduced shadow cost, 80-110 particles per burst.
- * - Fires every page load.
  */
 export default function Fireworks({ onDone }) {
+  // Synchronous session check — runs before first render so the canvas
+  // is never mounted on repeat visits within the same browser session.
+  const alreadySeen = (() => {
+    try { return !!sessionStorage.getItem('portfolio_fireworks_seen'); }
+    catch (_) { return false; }
+  })();
+
   const canvasRef = useRef(null);
   const [overlayFading, setOverlayFading] = useState(false);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(!alreadySeen);
   const [showMessage, setShowMessage] = useState(false);
   const [messageFading, setMessageFading] = useState(false);
 
+  // If already seen, immediately surface the Navbar and bail.
   useEffect(() => {
+    if (alreadySeen) {
+      if (typeof onDone === 'function') onDone();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (alreadySeen) return;   // guard already handled above
+
+    // Mark session as seen on first run
+    try { sessionStorage.setItem('portfolio_fireworks_seen', 'true'); }
+    catch (_) {}
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
