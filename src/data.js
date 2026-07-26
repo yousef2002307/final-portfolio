@@ -372,25 +372,9 @@ export const education = [
   {
     id: 'edu-1',
     degree: 'B.Sc. in Computer Science',
-    institution: 'Faculty of Science · Damascus University',
-    period: '2019 — 2023',
+    institution: 'Faculty of Computers and Artificial Intelligence - Benha University',
+    period: '2020 — 2024',
     details:
-      'Graduate-level focus on software engineering, databases, algorithms, and web technologies. Foundation for a backend & full-stack career.',
-  },
-  {
-    id: 'edu-2',
-    degree: 'Laravel & PHP Certification',
-    institution: 'Self-directed / Industry Courses',
-    period: '2021 — 2022',
-    details:
-      'Advanced mastery of the Laravel framework: Eloquent, queues, broadcasting, testing (PHPUnit), and scalable API architecture.',
-  },
-  {
-    id: 'edu-3',
-    degree: 'Full-Stack Web Development',
-    institution: 'Online Bootcamps & Documentation',
-    period: '2020 — 2021',
-    details:
-      'Hands-on training in HTML, CSS, JavaScript, PHP, REST APIs, and database design — building production-ready web applications.',
+      'Graduated with GPA = 3.53. Focused on software engineering, databases, algorithms, and web technologies. Foundation for a backend & full-stack career.',
   },
 ];

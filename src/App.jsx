@@ -93,7 +93,7 @@ function App() {
         <About />
         <Experience />
         <Projects onOpen={setSelectedProject} />
-       {/* <Education />*/}
+        <Education />
         <Contact />
       </main>
 

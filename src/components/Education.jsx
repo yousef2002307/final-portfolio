@@ -26,7 +26,7 @@ export default function Education() {
             Degrees & certifications
           </motion.h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className={`mt-10 grid gap-6 ${education.length === 1 ? 'max-w-2xl' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
             {education.map((item) => (
               <motion.article
                 key={item.id}

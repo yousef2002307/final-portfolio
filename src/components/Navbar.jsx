@@ -7,9 +7,9 @@ import cn from '../lib/cn';
 const LINKS = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
+  { id: 'experience', label: 'Work Experience' },
   { id: 'projects', label: 'Projects' },
- // { id: 'education', label: 'Education' },
+  { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
 ];
 
