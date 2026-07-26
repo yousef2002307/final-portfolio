@@ -4,7 +4,7 @@ import { staggerContainer, fadeUp, inView } from '../lib/motion';
 const STATS = [
   { value: '60+', label: 'Projects Built' },
   { value: '15+', label: 'Live Client Products' },
-  { value: '2+', label: 'Years Experience' },
+  { value: '2 to 3 ', label: 'Years Experience' },
   { value: '50+', label: 'Public Repositories' },
 ];
 
