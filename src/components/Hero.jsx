@@ -66,7 +66,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg"
         >
-          A Full-stack web developer(Laravel & Node.js & React.js) with 2+ years of work
+          A Full-stack web developer(Laravel & Node.js & React.js) with [2 to 3] years of work
           experience delivering <span className="text-slate-200">60+ web
           projects</span>, including 15+ live client products. I architect
           high-performance Laravel &amp; Node.js APIs, real-time features, and
