@@ -338,6 +338,16 @@ export default projects;
 export const experience = [
   {
     id: 'exp-1',
+    role: 'Full-Stack Developer',
+    company: 'Freelancing',
+    period: 'Feb 2024 - Sep 2024',
+    location: '',
+    points: [
+      '',
+    ],
+  },
+  {
+    id: 'exp-2',
     role: 'PHP / LaravelBackend Developer',
     company: 'Not Found Digital Agency',
     period: 'sep 2024 - May 2025',
@@ -347,10 +357,10 @@ export const experience = [
     ],
   },
   {
-    id: 'exp-2',
+    id: 'exp-3',
     role: 'Backend Web Developer',
     company: 'Rar-it Development & Design',
-    period: 'May 2025 - present',
+    period: 'May 2025 - July 2026',
     location: 'Remote',
     points: [
       '',
