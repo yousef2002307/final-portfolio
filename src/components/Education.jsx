@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, CalendarDays } from 'lucide-react';
-import { education } from '../data';
+import { GraduationCap, CalendarDays, ExternalLink, ShieldCheck } from 'lucide-react';
+import { education, certificatesUrl } from '../data';
 import { staggerContainer, fadeUp, inView } from '../lib/motion';
 
 export default function Education() {
@@ -13,18 +13,36 @@ export default function Education() {
           whileInView="visible"
           viewport={inView}
         >
-          <motion.span
-            variants={fadeUp}
-            className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-gradient"
-          >
-            Education
-          </motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl"
-          >
-            Degrees & certifications
-          </motion.h2>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <motion.span
+                variants={fadeUp}
+                className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-gradient"
+              >
+                Education
+              </motion.span>
+              <motion.h2
+                variants={fadeUp}
+                className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl"
+              >
+                Degrees & certifications
+              </motion.h2>
+            </div>
+
+            {certificatesUrl && (
+              <motion.a
+                variants={fadeUp}
+                href={certificatesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-300 ring-1 ring-violet-500/20 transition-all hover:bg-violet-500/20 hover:text-white hover:ring-violet-500/40 active:scale-95 sm:self-end"
+              >
+                <ShieldCheck className="h-4 w-4 text-violet-400" />
+                <span>Verify All Certificates</span>
+                <ExternalLink className="h-3.5 w-3.5 opacity-70" />
+              </motion.a>
+            )}
+          </div>
 
           <div className={`mt-10 grid gap-6 ${education.length === 1 ? 'max-w-2xl' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
             {education.map((item) => (

@@ -377,4 +377,31 @@ export const education = [
     details:
       'Graduated with GPA = 3.53. Focused on software engineering, databases, algorithms, and web technologies. Foundation for a backend & full-stack career.',
   },
+  {
+    id: 'edu-2',
+    degree: 'Full Stack (PHP | React.js) Certificate',
+    institution: 'ITI (Information Technology Institute)',
+    period: 'Jul 2024',
+    details:
+      'Full Stack Web Development certification focusing on PHP, React.js, modern web standards, and full-stack software architecture.',
+  },
+  {
+    id: 'edu-3',
+    degree: 'Docker & Kubernetes: Production-Grade Containerization & Orchestration',
+    institution: 'Udemy',
+    period: 'Nov 2025 — Feb 2026',
+    details:
+      'Comprehensive training in containerization with Docker and container orchestration using Kubernetes for production environment deployment.',
+  },
+  {
+    id: 'edu-4',
+    degree: 'Mastering CI/CD with GitHub Actions: Automate, Test, Deploy',
+    institution: 'Udemy',
+    period: 'Apr 2026 — Jun 2026',
+    details:
+      'Specialized course in building automated CI/CD pipelines, automated testing, and deployment workflows with GitHub Actions.',
+  },
 ];
+
+export const certificatesUrl =
+  'https://drive.google.com/drive/folders/1i_d6fvEzIgMQ_HnBIi1mD4TsHQ2VvZ0U?usp=drive_link';
