@@ -340,7 +340,7 @@ export const experience = [
     id: 'exp-1',
     role: 'Full-Stack Developer',
     company: 'Freelancing',
-    period: 'Feb 2024 - Sep 2024',
+    period: 'Feb 2024 - Now',
     location: '',
     points: [
       '',
