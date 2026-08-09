@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeUp, inView } from '../lib/motion';
 
-const STATS = [
-  { value: '60+', label: 'Projects Built' },
-  { value: '15+', label: 'Live Client Products' },
-  { value: '2 to 3 ', label: 'Years Experience' },
-  { value: '50+', label: 'Public Repositories' },
-];
+export default function About({ isJunior = false }) {
+  const STATS = [
+    { value: '60+', label: 'Projects Built' },
+    { value: '15+', label: 'Live Client Products' },
+    { value: isJunior ? '1 to 2' : '2 to 3', label: 'Years Experience' },
+    { value: '50+', label: 'Public Repositories' },
+  ];
 
 const SKILLS = [
   'Laravel', 'PHP', 'HTML5', 'CSS3','Node.js','React.js','jQuery','Tailwind','Bootstrap','Git','GitHub', 'MySQL', 'Redis', 'REST APIs',
@@ -14,7 +15,7 @@ const SKILLS = [
   'Firebase', 'JavaScript', 'SEO', 'PHPUnit', 'Docker','CI/CD'
 ];
 
-export default function About() {
+export default function About({ isJunior = false }) {
   return (
     <section id="about" className="relative px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-5xl">
@@ -44,7 +45,7 @@ export default function About() {
             {/* Narrative */}
             <div className="md:col-span-3">
               <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
-                I&apos;m a full-stack web developer with [2 to 3] years of
+                I&apos;m a full-stack web developer with [{isJunior ? '1 to 2' : '2 to 3'}] years of
                 experience and a computer-science graduate. I&apos;ve delivered more than{' '}
                 <span className="text-white">60 projects</span> in web
                 development, including 13+ live products for real clients — from
