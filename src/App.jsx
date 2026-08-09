@@ -18,6 +18,9 @@ function App() {
   // Hide Navbar during the fireworks intro; show it once fireworks finish.
   const [showNav, setShowNav] = useState(false);
 
+  // If ?ju=1 is in the URL, render junior-level copy (1–2 yrs, Junior Developer).
+  const isJunior = new URLSearchParams(window.location.search).get('ju') === '1';
+
   // Log the visit once per session via a Vercel serverless function.
   // sessionStorage guard prevents duplicate pings on in-app navigation.
   useEffect(() => {
@@ -89,8 +92,8 @@ function App() {
       </div>
 
       <main>
-        <Hero />
-        <About />
+        <Hero isJunior={isJunior} />
+        <About isJunior={isJunior} />
         <Experience />
         <Projects onOpen={setSelectedProject} />
         <Education />

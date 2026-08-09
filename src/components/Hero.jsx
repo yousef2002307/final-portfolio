@@ -5,7 +5,7 @@ import { staggerContainer, fadeUp } from '../lib/motion';
 const scrollTo = (id) =>
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
-export default function Hero() {
+export default function Hero({ isJunior = false }) {
   return (
     <section
       id="home"
@@ -33,7 +33,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.2em] text-gradient sm:text-base"
         >
-          Backend & Full-Stack Developer
+          Backend & Full-Stack Developer{isJunior ? ' — Junior Developer' : ''}
         </motion.p>
 
         <motion.h1
@@ -66,7 +66,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg"
         >
-          A Full-stack web developer(Laravel & Node.js & React.js) with [2 to 3] years of work
+          A Full-stack web developer(Laravel & Node.js & React.js) with [{isJunior ? '1 to 2' : '2 to 3'}] years of work
           experience delivering <span className="text-slate-200">60+ web
           projects</span>, including 15+ live client products. I architect
           high-performance Laravel &amp; Node.js APIs, real-time features, and
