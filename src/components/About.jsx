@@ -9,13 +9,12 @@ export default function About({ isJunior = false }) {
     { value: '50+', label: 'Public Repositories' },
   ];
 
-const SKILLS = [
-  'Laravel', 'PHP', 'HTML5', 'CSS3','Node.js','React.js','jQuery','Tailwind','Bootstrap','Git','GitHub', 'MySQL', 'Redis', 'REST APIs',
-  'WebSockets', 'SSE', 'Real-time', 'Queues', 'RBAC', 'Payments',
-  'Firebase', 'JavaScript', 'SEO', 'PHPUnit', 'Docker','CI/CD'
-];
+  const SKILLS = [
+    'Laravel', 'PHP', 'HTML5', 'CSS3', 'Node.js', 'React.js', 'jQuery', 'Tailwind', 'Bootstrap', 'Git', 'GitHub', 'MySQL', 'Redis', 'REST APIs',
+    'WebSockets', 'SSE', 'Real-time', 'Queues', 'RBAC', 'Payments',
+    'Firebase', 'JavaScript', 'SEO', 'PHPUnit', 'Docker', 'CI/CD',
+  ];
 
-export default function About({ isJunior = false }) {
   return (
     <section id="about" className="relative px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-5xl">
