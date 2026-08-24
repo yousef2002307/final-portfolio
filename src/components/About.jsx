@@ -10,7 +10,7 @@ export default function About({ isJunior = false }) {
   ];
 
   const SKILLS = [
-    'Laravel', 'PHP', 'HTML5', 'CSS3', 'Node.js', 'React.js', 'jQuery', 'Tailwind', 'Bootstrap', 'Git', 'GitHub', 'MySQL', 'Redis', 'REST APIs',
+    'Laravel', 'PHP', 'HTML5', 'CSS3', 'Next.js', 'Node.js', 'React.js', 'jQuery', 'Tailwind', 'Bootstrap', 'Git', 'GitHub', 'MySQL', 'Redis', 'REST APIs',
     'WebSockets', 'SSE', 'Real-time', 'Queues', 'RBAC', 'Payments',
     'Firebase', 'JavaScript', 'SEO', 'PHPUnit', 'Docker', 'CI/CD',
   ];
