@@ -348,7 +348,7 @@ export const experience = [
   },
   {
     id: 'exp-2',
-    role: 'PHP / LaravelBackend Developer',
+    role: 'Backend Developer',
     company: 'Not Found Digital Agency',
     period: 'sep 2024 - May 2025',
     location: '',
@@ -358,7 +358,7 @@ export const experience = [
   },
   {
     id: 'exp-3',
-    role: 'Backend Web Developer',
+    role: 'Full-Stack Developer',
     company: 'Rar-it Development & Design',
     period: 'May 2025 - July 2026',
     location: 'Remote',
