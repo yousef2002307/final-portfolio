@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Code2, Terminal } from 'lucide-react';
 import useActiveSection from '../hooks/useActiveSection';
 import cn from '../lib/cn';
 
@@ -15,7 +15,7 @@ const LINKS = [
 
 const SECTION_IDS = LINKS.map((l) => l.id);
 
-export default function Navbar() {
+export default function Navbar({ onTerminalOpen }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const active = useActiveSection(SECTION_IDS);
@@ -88,6 +88,16 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          {/* >_ terminal shortcut pill */}
+          <button
+            onClick={onTerminalOpen}
+            title="Open Developer Terminal  (Ctrl + `)" 
+            className="hidden items-center gap-1.5 rounded-xl border border-violet-500/30 bg-violet-600/10 px-3 py-1.5 font-mono text-xs font-semibold text-violet-300 transition-all hover:border-violet-400/60 hover:bg-violet-600/20 hover:text-violet-100 md:flex"
+          >
+            <Terminal className="h-3.5 w-3.5" />
+            &gt;_
+          </button>
 
           {/* Mobile toggle */}
           <button
