@@ -227,33 +227,62 @@ const runCommand = (raw, close) => {
       ];
 
     case "github":
-    case "stats":
+    case "stats": {
+      let live = null;
+      try {
+        const raw = sessionStorage.getItem("github_live_stats_v2");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          live = parsed.data || parsed;
+        }
+      } catch {
+        /* ignore */
+      }
+      const reposCount = live?.public_repos ?? 156;
+      const followersCount = live?.followers ?? 4;
       return [
         blank(),
         line("🐙  LIVE GITHUB SYSTEM TELEMETRY: @yousef2002307", "title"),
-        line("   • Public Repos : 156 repositories", "success"),
+        line(`   • Public Repos : ${reposCount} repositories`, "success"),
         line("   • Coding Span  : 2021 — Present (3+ Years)", "info"),
         line("   • Primary Stack: PHP, Laravel, Node.js, React", "info"),
-        line("   • Followers    : 4 developer connections", "info"),
+        line(`   • Followers    : ${followersCount} developer connections`, "info"),
         line("   • Status       : Active & Shipping Code", "warn"),
         line("   • Profile      : https://github.com/yousef2002307", "info"),
         blank(),
         line("Run  socials  to open GitHub in your browser.", "raw"),
         blank(),
       ];
+    }
 
     case "commits":
-    case "commit":
+    case "commit": {
+      let liveCommits = null;
+      try {
+        const raw = sessionStorage.getItem("github_live_stats_v2");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          liveCommits = parsed.data?.recent_commits || parsed.recent_commits;
+        }
+      } catch {
+        /* ignore */
+      }
+      const commitsToShow = liveCommits && liveCommits.length > 0 ? liveCommits : [
+        { sha: "003ae76", message: "feat: add cv download button & terminal support", repo: "final-portfolio" },
+        { sha: "848560d", message: "feat: developer terminal mode with smart commands", repo: "final-portfolio" },
+        { sha: "736e97c", message: "feat: complete portfolio improvements and styles", repo: "final-portfolio" },
+      ];
       return [
         blank(),
         line("⚡  RECENT GITHUB COMMITS: @yousef2002307", "title"),
-        line("   [003ae76]  feat: add cv download button & terminal support (final-portfolio)", "success"),
-        line("   [848560d]  feat: developer terminal mode with smart commands (final-portfolio)", "info"),
-        line("   [736e97c]  feat: complete portfolio improvements and styles (final-portfolio)", "info"),
+        ...commitsToShow.map((c) =>
+          line(`   [${c.sha}]  ${c.message} (${c.repo})`, "success")
+        ),
         blank(),
         line("Run  github  for full telemetry or open GitHub profile.", "raw"),
         blank(),
       ];
+    }
 
     case "info":
       return [

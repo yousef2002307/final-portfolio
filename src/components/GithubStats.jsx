@@ -82,11 +82,16 @@ export default function GithubStats() {
 
   useEffect(() => {
     try {
-      const cached = sessionStorage.getItem(CACHE_KEY);
-      if (cached) {
-        setStats(JSON.parse(cached));
+      const raw = sessionStorage.getItem(CACHE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        const data = parsed.data || parsed;
+        setStats(data);
         setIsLive(true);
-        return;
+        // If cached less than 60 seconds ago, skip network fetch
+        if (parsed.timestamp && Date.now() - parsed.timestamp < 60000) {
+          return;
+        }
       }
     } catch {
       /* ignore storage errors */
@@ -126,7 +131,10 @@ export default function GithubStats() {
         setStats(liveStats);
         setIsLive(true);
         try {
-          sessionStorage.setItem(CACHE_KEY, JSON.stringify(liveStats));
+          sessionStorage.setItem(
+            CACHE_KEY,
+            JSON.stringify({ data: liveStats, timestamp: Date.now() })
+          );
         } catch {
           /* ignore storage errors */
         }
