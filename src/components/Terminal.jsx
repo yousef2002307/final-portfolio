@@ -60,6 +60,7 @@ const HELP_TEXT = [
   blank(),
   line("Info:", "warn"),
   line("  github / stats        — show live GitHub system metrics", "success"),
+  line("  commits / commit      — show recent git commit history", "success"),
   line("  cv / resume           — download CV (PDF)", "success"),
   line("  skills    whoami    experience    education", "success"),
   line("  contact   socials   email         certificates", "success"),
@@ -241,11 +242,25 @@ const runCommand = (raw, close) => {
         blank(),
       ];
 
+    case "commits":
+    case "commit":
+      return [
+        blank(),
+        line("⚡  RECENT GITHUB COMMITS: @yousef2002307", "title"),
+        line("   [003ae76]  feat: add cv download button & terminal support (final-portfolio)", "success"),
+        line("   [848560d]  feat: developer terminal mode with smart commands (final-portfolio)", "info"),
+        line("   [736e97c]  feat: complete portfolio improvements and styles (final-portfolio)", "info"),
+        blank(),
+        line("Run  github  for full telemetry or open GitHub profile.", "raw"),
+        blank(),
+      ];
+
     case "info":
       return [
         blank(),
         line("ℹ  Info commands:", "title"),
         line("   • github/stats  — live GitHub metrics", "success"),
+        line("   • commits       — recent git commits", "success"),
         line("   • cv / resume   — download CV (PDF)", "success"),
         line("   • skills        — list tech skills", "success"),
         line("   • whoami        — developer summary", "success"),
@@ -289,7 +304,7 @@ const runCommand = (raw, close) => {
         "home", "about", "experience", "work", "projects", "education", "contact",
         "skills", "whoami", "socials", "email", "certificates", "certs",
         "project", "open", "info", "system", "nav", "navigation", "cv", "resume",
-        "github", "stats",
+        "github", "stats", "commits", "commit",
       ];
       const q = cmd;
       const suggestions = ALL_CMDS.filter(
@@ -328,7 +343,7 @@ const AUTOCOMPLETE = [
   "help","clear","exit","home","about","experience","projects",
   "project","education","contact","skills","whoami","socials",
   "email","certificates","open","work","quit","info","system","nav","navigation","cv","resume",
-  "github","stats",
+  "github","stats","commits","commit",
 ];
 
 export default function Terminal({ isOpen, onClose }) {
