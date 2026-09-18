@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeUp, inView } from '../lib/motion';
+import GithubStats from './GithubStats';
 
 export default function About({ isJunior = false }) {
   const STATS = [
@@ -91,6 +92,9 @@ export default function About({ isJunior = false }) {
               ))}
             </div>
           </motion.div>
+
+          {/* Live GitHub System Telemetry */}
+          <GithubStats />
         </motion.div>
       </div>
     </section>

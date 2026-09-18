@@ -59,6 +59,7 @@ const HELP_TEXT = [
   line("  open <id|title>       — open project link in browser", "success"),
   blank(),
   line("Info:", "warn"),
+  line("  github / stats        — show live GitHub system metrics", "success"),
   line("  cv / resume           — download CV (PDF)", "success"),
   line("  skills    whoami    experience    education", "success"),
   line("  contact   socials   email         certificates", "success"),
@@ -224,10 +225,27 @@ const runCommand = (raw, close) => {
         blank(),
       ];
 
+    case "github":
+    case "stats":
+      return [
+        blank(),
+        line("🐙  LIVE GITHUB SYSTEM TELEMETRY: @yousef2002307", "title"),
+        line("   • Public Repos : 156 repositories", "success"),
+        line("   • Coding Span  : 2021 — Present (3+ Years)", "info"),
+        line("   • Primary Stack: PHP, Laravel, Node.js, React", "info"),
+        line("   • Followers    : 4 developer connections", "info"),
+        line("   • Status       : Active & Shipping Code", "warn"),
+        line("   • Profile      : https://github.com/yousef2002307", "info"),
+        blank(),
+        line("Run  socials  to open GitHub in your browser.", "raw"),
+        blank(),
+      ];
+
     case "info":
       return [
         blank(),
         line("ℹ  Info commands:", "title"),
+        line("   • github/stats  — live GitHub metrics", "success"),
         line("   • cv / resume   — download CV (PDF)", "success"),
         line("   • skills        — list tech skills", "success"),
         line("   • whoami        — developer summary", "success"),
@@ -271,6 +289,7 @@ const runCommand = (raw, close) => {
         "home", "about", "experience", "work", "projects", "education", "contact",
         "skills", "whoami", "socials", "email", "certificates", "certs",
         "project", "open", "info", "system", "nav", "navigation", "cv", "resume",
+        "github", "stats",
       ];
       const q = cmd;
       const suggestions = ALL_CMDS.filter(
@@ -309,6 +328,7 @@ const AUTOCOMPLETE = [
   "help","clear","exit","home","about","experience","projects",
   "project","education","contact","skills","whoami","socials",
   "email","certificates","open","work","quit","info","system","nav","navigation","cv","resume",
+  "github","stats",
 ];
 
 export default function Terminal({ isOpen, onClose }) {
