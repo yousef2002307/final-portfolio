@@ -1,8 +1,18 @@
-﻿import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Terminal as TerminalIcon, X } from "lucide-react";
 import projects from "../data";
 import { experience, education, certificatesUrl } from "../data";
+import cvFile from "../assets/Youssef Ahmed - CV - Full stack.pdf";
+
+const downloadCv = () => {
+  const a = document.createElement("a");
+  a.href = cvFile;
+  a.download = "Youssef Ahmed - CV - Full stack.pdf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+};
 
 const EMAIL = "yousef20022008@gmail.com";
 const GITHUB = "https://github.com/yousef2002307";
@@ -49,6 +59,7 @@ const HELP_TEXT = [
   line("  open <id|title>       — open project link in browser", "success"),
   blank(),
   line("Info:", "warn"),
+  line("  cv / resume           — download CV (PDF)", "success"),
   line("  skills    whoami    experience    education", "success"),
   line("  contact   socials   email         certificates", "success"),
   blank(),
@@ -203,11 +214,85 @@ const runCommand = (raw, close) => {
       openUrl(certificatesUrl);
       return [line("✔ Opened certificates drive in new tab.", "success")];
 
-    default:
+    case "cv":
+    case "resume":
+      downloadCv();
+      return [
+        blank(),
+        line("📄  Youssef Ahmed - CV - Full stack.pdf", "title"),
+        line("✔  CV download started in your browser!", "success"),
+        blank(),
+      ];
+
+    case "info":
+      return [
+        blank(),
+        line("ℹ  Info commands:", "title"),
+        line("   • cv / resume   — download CV (PDF)", "success"),
+        line("   • skills        — list tech skills", "success"),
+        line("   • whoami        — developer summary", "success"),
+        line("   • experience    — work history", "success"),
+        line("   • education     — degrees & certs", "success"),
+        line("   • contact       — contact links & email", "success"),
+        line("   • socials       — open GitHub & LinkedIn", "success"),
+        line("   • email         — copy email address", "success"),
+        line("   • certificates  — open certs drive", "success"),
+        blank(),
+      ];
+
+    case "system":
+      return [
+        blank(),
+        line("💻  System commands:", "title"),
+        line("   • help / ?      — show full manual", "success"),
+        line("   • clear         — clear terminal screen", "success"),
+        line("   • exit / quit   — close terminal", "success"),
+        blank(),
+      ];
+
+    case "nav":
+    case "navigation":
+      return [
+        blank(),
+        line("🧭  Navigation commands:", "title"),
+        line("   • home          — jump to Hero", "success"),
+        line("   • about         — jump to About Me", "success"),
+        line("   • experience    — jump to Work Experience", "success"),
+        line("   • projects      — jump to Projects", "success"),
+        line("   • education     — jump to Education", "success"),
+        line("   • contact       — jump to Contact", "success"),
+        blank(),
+      ];
+
+    default: {
+      // Collect commands that start with or contain the typed word
+      const ALL_CMDS = [
+        "help", "clear", "exit", "quit",
+        "home", "about", "experience", "work", "projects", "education", "contact",
+        "skills", "whoami", "socials", "email", "certificates", "certs",
+        "project", "open", "info", "system", "nav", "navigation", "cv", "resume",
+      ];
+      const q = cmd;
+      const suggestions = ALL_CMDS.filter(
+        (c) => c.startsWith(q) || (q.length >= 2 && c.includes(q))
+      );
+
+      if (suggestions.length > 0) {
+        return [
+          blank(),
+          line(`"${trimmed}" is not a command. Did you mean:`, "warn"),
+          ...suggestions.map((s) => line(`   • ${s}`, "success")),
+          blank(),
+          line("Type  help  for the full command list.", "raw"),
+          blank(),
+        ];
+      }
+
       return [
         line(`Command not found: "${trimmed}"`, "error"),
         line("Type  help  to see available commands.", "raw"),
       ];
+    }
   }
 };
 
@@ -223,7 +308,7 @@ const TYPE_CLASS = {
 const AUTOCOMPLETE = [
   "help","clear","exit","home","about","experience","projects",
   "project","education","contact","skills","whoami","socials",
-  "email","certificates","open","work","quit",
+  "email","certificates","open","work","quit","info","system","nav","navigation","cv","resume",
 ];
 
 export default function Terminal({ isOpen, onClose }) {

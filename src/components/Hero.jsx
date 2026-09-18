@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles, Globe, Mail } from 'lucide-react';
+import { ArrowDown, Sparkles, Globe, Mail, FileDown } from 'lucide-react';
 import { staggerContainer, fadeUp } from '../lib/motion';
+import cvFile from '../assets/Youssef Ahmed - CV - Full stack.pdf';
 
 const scrollTo = (id) =>
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -85,6 +86,14 @@ export default function Hero({ isJunior = false }) {
             <Sparkles className="h-4 w-4" />
             View My Work
           </button>
+          <a
+            href={cvFile}
+            download="Youssef Ahmed - CV - Full stack.pdf"
+            className="glow-border group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-transform hover:-translate-y-0.5"
+          >
+            <FileDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+            Download CV
+          </a>
           <button
             onClick={() => scrollTo('contact')}
             className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 backdrop-blur transition-colors hover:bg-white/10"

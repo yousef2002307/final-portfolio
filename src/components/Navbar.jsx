@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2, Terminal } from 'lucide-react';
+import { Menu, X, Code2, Terminal, FileDown } from 'lucide-react';
 import useActiveSection from '../hooks/useActiveSection';
 import cn from '../lib/cn';
+import cvFile from '../assets/Youssef Ahmed - CV - Full stack.pdf';
 
 const LINKS = [
   { id: 'home', label: 'Home' },
@@ -89,15 +90,28 @@ export default function Navbar({ onTerminalOpen }) {
             ))}
           </ul>
 
-          {/* >_ terminal shortcut pill */}
-          <button
-            onClick={onTerminalOpen}
-            title="Open Developer Terminal  (Ctrl + `)" 
-            className="hidden items-center gap-1.5 rounded-xl border border-violet-500/30 bg-violet-600/10 px-3 py-1.5 font-mono text-xs font-semibold text-violet-300 transition-all hover:border-violet-400/60 hover:bg-violet-600/20 hover:text-violet-100 md:flex"
-          >
-            <Terminal className="h-3.5 w-3.5" />
-            &gt;_
-          </button>
+          {/* Action buttons (CV + Terminal) */}
+          <div className="hidden items-center gap-2 md:flex">
+            <a
+              href={cvFile}
+              download="Youssef Ahmed - CV - Full stack.pdf"
+              title="Download CV (PDF)"
+              className="flex items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 font-display text-xs font-semibold text-emerald-300 transition-all hover:border-emerald-400/60 hover:bg-emerald-500/20 hover:text-emerald-100"
+            >
+              <FileDown className="h-3.5 w-3.5" />
+              CV
+            </a>
+
+            {/* >_ terminal shortcut pill */}
+            <button
+              onClick={onTerminalOpen}
+              title="Open Developer Terminal  (Ctrl + `)" 
+              className="flex items-center gap-1.5 rounded-xl border border-violet-500/30 bg-violet-600/10 px-3 py-1.5 font-mono text-xs font-semibold text-violet-300 transition-all hover:border-violet-400/60 hover:bg-violet-600/20 hover:text-violet-100"
+            >
+              <Terminal className="h-3.5 w-3.5" />
+              &gt;_
+            </button>
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -137,6 +151,16 @@ export default function Navbar({ onTerminalOpen }) {
                   </button>
                 </li>
               ))}
+              <li>
+                <a
+                  href={cvFile}
+                  download="Youssef Ahmed - CV - Full stack.pdf"
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-emerald-300 hover:bg-emerald-500/10"
+                >
+                  <FileDown className="h-4 w-4" />
+                  Download CV (PDF)
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}
