@@ -86,8 +86,8 @@ export default function ProjectCard({ project, onOpen, onDive, index }) {
                 style={{ boxShadow: '0 0 12px rgba(139,92,246,0.15)' }}
                 aria-label={`Problems I solved in ${project.title}`}
               >
-                <Zap className="h-3 w-3" />
-                Problems I Solved
+                <Zap className="h-3 w-3 shrink-0" />
+                <span>Problems I solved in this project</span>
               </button>
             )}
 
