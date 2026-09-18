@@ -10,6 +10,8 @@ const SOCIALS = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/yousef-ahmed-a22961307', Icon: FaLinkedin },
 ];
 
+
+
 export default function Contact() {
   return (
     <section id="contact" className="relative px-4 py-24 sm:px-6">
