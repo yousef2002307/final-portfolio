@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Globe } from 'lucide-react';
+import { X, ExternalLink, Globe, Zap, AlertTriangle, Lightbulb, TrendingUp } from 'lucide-react';
 
 /**
  * Animated full-screen project details overlay.
@@ -8,7 +8,7 @@ import { X, ExternalLink, Globe } from 'lucide-react';
  * - Backdrop fade + content scale/slide in via AnimatePresence.
  * - Closes on backdrop click, the X button, or Escape.
  * - Locks body scroll while open and restores focus on close.
- * - Gracefully handles missing liveUrl / githubUrl.
+ * - Renders a "Technical Deep Dives" section when project.deepDives is present.
  */
 export default function ProjectModal({ project, onClose }) {
   const closeRef = useRef(null);
@@ -37,7 +37,8 @@ export default function ProjectModal({ project, onClose }) {
     .map((l) => l.trim())
     .filter(Boolean);
 
-  const tags = project?.tags?.length ? project.tags : [];
+  const tags      = project?.tags?.length ? project.tags : [];
+  const deepDives = project?.deepDives?.length ? project.deepDives : [];
 
   return (
     <AnimatePresence>
@@ -49,7 +50,7 @@ export default function ProjectModal({ project, onClose }) {
           exit="hidden"
           role="dialog"
           aria-modal="true"
-          aria-label={`${project.title} — project details`}
+          aria-label={`${project.title} â€” project details`}
         >
           {/* Backdrop */}
           <motion.div
@@ -139,6 +140,112 @@ export default function ProjectModal({ project, onClose }) {
                     <p className="text-slate-400">No description available.</p>
                   )}
                 </div>
+
+                {/* â”€â”€ Technical Deep Dives â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                {deepDives.length > 0 && (
+                  <div className="mt-10">
+                    {/* Section header */}
+                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                      <span className="grid h-8 w-8 place-items-center rounded-lg bg-violet-500/15 text-violet-400">
+                        <Zap className="h-4 w-4" />
+                      </span>
+                      <div>
+                        <h3 className="font-display text-base font-bold text-white sm:text-lg">
+                          Technical Deep Dives
+                        </h3>
+                        <p className="text-xs text-slate-400">
+                          Engineering challenges &amp; how I solved them
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Cards */}
+                    <div className="mt-5 space-y-5">
+                      {deepDives.map((dive, idx) => (
+                        <div
+                          key={idx}
+                          className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] p-5 transition-all hover:border-violet-400/25 hover:bg-white/[0.05] sm:p-6"
+                          style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}
+                        >
+                          {/* Ambient glow on hover */}
+                          <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-violet-600/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+
+                          {/* Card header */}
+                          <div className="flex items-start gap-3">
+                            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-500/20 font-mono text-xs font-bold text-violet-300">
+                              {String(idx + 1).padStart(2, '0')}
+                            </span>
+                            <h4 className="font-display text-[15px] font-bold leading-snug text-white sm:text-base">
+                              {dive.title}
+                            </h4>
+                          </div>
+
+                          {/* Problem / Solution / Result rows */}
+                          <div className="mt-4 space-y-3">
+                            {/* Problem */}
+                            <div className="flex gap-3">
+                              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-rose-500/15">
+                                <AlertTriangle className="h-3 w-3 text-rose-400" />
+                              </span>
+                              <div className="min-w-0">
+                                <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-rose-400">
+                                  The Problem
+                                </span>
+                                <p className="text-[13px] leading-relaxed text-slate-300">
+                                  {dive.problem}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Solution */}
+                            <div className="flex gap-3">
+                              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-violet-500/15">
+                                <Lightbulb className="h-3 w-3 text-violet-400" />
+                              </span>
+                              <div className="min-w-0">
+                                <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-violet-400">
+                                  The Solution
+                                </span>
+                                <p className="text-[13px] leading-relaxed text-slate-300">
+                                  {dive.solution}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Result */}
+                            <div className="flex gap-3">
+                              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-emerald-500/15">
+                                <TrendingUp className="h-3 w-3 text-emerald-400" />
+                              </span>
+                              <div className="min-w-0">
+                                <span className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+                                  The Result
+                                </span>
+                                <p className="text-[13px] leading-relaxed text-slate-300">
+                                  {dive.result}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Stack chips */}
+                          {dive.stack?.length > 0 && (
+                            <div className="mt-4 flex flex-wrap gap-1.5">
+                              {dive.stack.map((s) => (
+                                <span
+                                  key={s}
+                                  className="rounded-md border border-white/10 bg-black/30 px-2 py-0.5 font-mono text-[10px] text-slate-400"
+                                >
+                                  {s}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Actions */}
                 <div className="mt-8 flex flex-wrap gap-3 border-t border-white/10 pt-6">

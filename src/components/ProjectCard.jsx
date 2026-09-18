@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Globe } from 'lucide-react';
+import { ArrowUpRight, Globe, Zap } from 'lucide-react';
 import { fadeUp } from '../lib/motion';
 
 /**
  * A premium project card. Gracefully handles missing fields (image, tags)
  * with elegant placeholders so partial data never breaks the layout.
+ *
+ * onOpen  → opens the full project detail modal
+ * onDive  → opens the "Problems I Solved" deep-dive modal
  */
-export default function ProjectCard({ project, onOpen, index }) {
-  const hasImage = Boolean(project?.imageUrl);
-  const tags = project?.tags?.length ? project.tags : [];
+export default function ProjectCard({ project, onOpen, onDive, index }) {
+  const hasImage  = Boolean(project?.imageUrl);
+  const tags      = project?.tags?.length ? project.tags : [];
+  const hasDives  = Boolean(project?.deepDives?.length);
 
   return (
     <motion.article
@@ -68,23 +72,42 @@ export default function ProjectCard({ project, onOpen, index }) {
           )}
         </div>
 
-        {/* Footer link */}
-        <div className="mt-auto flex items-center justify-between pt-5">
-          <span className="text-sm font-semibold text-gradient">Details</span>
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
-              aria-label={`${project.title} on GitHub`}
-            >
-              <Globe className="h-4 w-4" />
-            </a>
-          )}
+        {/* Footer */}
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-5">
+          {/* Details link (card click already opens it) */}
+          <span className="text-sm font-semibold text-gradient">Details →</span>
+
+          <div className="flex items-center gap-2">
+            {/* "Problems I Solved" button — only when deepDives exist */}
+            {hasDives && (
+              <button
+                onClick={(e) => { e.stopPropagation(); onDive?.(project); }}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-violet-500/35 bg-violet-500/10 px-3 py-1.5 text-[11px] font-semibold text-violet-300 transition-all hover:border-violet-400/60 hover:bg-violet-500/20 hover:text-violet-100"
+                style={{ boxShadow: '0 0 12px rgba(139,92,246,0.15)' }}
+                aria-label={`Problems I solved in ${project.title}`}
+              >
+                <Zap className="h-3 w-3" />
+                Problems I Solved
+              </button>
+            )}
+
+            {/* GitHub icon */}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+                aria-label={`${project.title} on GitHub`}
+              >
+                <Globe className="h-4 w-4" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </motion.article>
   );
 }
+

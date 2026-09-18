@@ -1,16 +1,18 @@
-import { useMemo, useState } from 'react';
+﻿import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, FolderGit2 } from 'lucide-react';
 import projectsData from '../data';
 import { paginate } from '../lib/projects';
 import { fadeUp, staggerContainer, inView } from '../lib/motion';
 import ProjectCard from './ProjectCard';
+import DeepDiveModal from './DeepDiveModal';
 
-const PROJECTS_PER_PAGE = 2; // spec: exactly 2 projects per page
+const PROJECTS_PER_PAGE = 2;
 
 export default function Projects({ onOpen }) {
   const [page, setPage] = useState(1);
-  const [direction, setDirection] = useState(0); // +1 next, -1 prev (for slide dir)
+  const [direction, setDirection] = useState(0);
+  const [deepDiveProject, setDeepDiveProject] = useState(null);
 
   const projects = useMemo(
     () => (Array.isArray(projectsData) ? projectsData : []),
@@ -72,6 +74,7 @@ export default function Projects({ onOpen }) {
                   key={project.id}
                   project={project}
                   onOpen={onOpen}
+                  onDive={setDeepDiveProject}
                   index={i}
                 />
               ))}
@@ -84,7 +87,7 @@ export default function Projects({ onOpen }) {
           <span className="text-sm text-slate-400">
             Page{' '}
             <span className="font-semibold text-white">{page}</span> of{' '}
-            <span className="font-semibold text-white">{totalPages}</span> ·{' '}
+            <span className="font-semibold text-white">{totalPages}</span> &middot;{' '}
             {projects.length} projects
           </span>
 
@@ -97,7 +100,7 @@ export default function Projects({ onOpen }) {
               <ChevronLeft className="h-4 w-4" /> Previous
             </button>
 
-            {/* Dotted page indicators */}
+            {/* Page dots */}
             <div className="flex items-center gap-1.5">
               {Array.from({ length: totalPages }).map((_, i) => (
                 <button
@@ -123,6 +126,12 @@ export default function Projects({ onOpen }) {
           </div>
         </div>
       </div>
+
+      {/* "Problems I Solved" deep-dive modal */}
+      <DeepDiveModal
+        project={deepDiveProject}
+        onClose={() => setDeepDiveProject(null)}
+      />
     </section>
   );
 }
