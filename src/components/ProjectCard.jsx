@@ -93,6 +93,8 @@ export default function ProjectCard({ project, onOpen, onDive, index }) {
 
 
 
+
+
             {/* GitHub icon */}
             {project.githubUrl && (
               <a
