@@ -191,7 +191,7 @@ export default function Fireworks({ onDone }) {
   if (!visible) return null;
 
   // Each word is a flex group; each character is its own animated+gradient span.
-  const title = 'Welcome to My Portfolio!';
+  const title = 'Welcome to My Portfolio!!!!!!!!!!!!!!!!';
   const words = title.split(' ');
   const STAGGER = 0.07;
   const LETTER_DURATION = 0.45;
