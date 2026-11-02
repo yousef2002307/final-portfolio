@@ -21,7 +21,7 @@ import image21 from './assets/images/dw2ni.png';
 import image22 from './assets/images/capture99.png';
 import image23 from './assets/images/Capturesyria.png';
 import image24 from './assets/images/lasscar.png';
-import image25 from './assets/images/1792236977277.jpg';
+import image25 from './assets/images/25.png';
 import fhar from './assets/images/fhar.png';
 import acti from './assets/images/Captureacti.png';
 
