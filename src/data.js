@@ -21,6 +21,7 @@ import image21 from './assets/images/dw2ni.png';
 import image22 from './assets/images/capture99.png';
 import image23 from './assets/images/Capturesyria.png';
 import image24 from './assets/images/lasscar.png';
+import image25 from './assets/images/1792236977277.png';
 import fhar from './assets/images/fhar.png';
 import acti from './assets/images/Captureacti.png';
 
@@ -39,6 +40,34 @@ const splitUrl = (url) => {
 };
 
 const data = [
+  {
+    id: 44645,
+    title: 'CRMzz – Customer Relationship Management (CRM) & Social Marketing Platform',
+    description: `
+CRMzz is a CRM and social marketing platform designed to help businesses centralize customer contacts, manage customer relationships, and streamline marketing and influencer outreach from one place.
+
+The platform enables businesses to import and organize contacts from multiple sources, manage customer engagement, run email and SMS marketing campaigns, discover relevant influencers, and coordinate influencer marketing activities. It brings customer relationship management and marketing workflows together to help businesses improve customer engagement, retention, and brand visibility.
+    `,
+    imageUrl: image21,
+    url: 'https://drive.google.com/drive/folders/1OEW4i2GFvpLzL0U_m-n-_TNKiI_fg6We?usp=sharing',
+    tags: ['React.js', 'PHP', 'Laravel', 'Node.js', 'SaaS'],
+    // deepDives: [
+    //   {
+    //     title: 'Real-Time Driver Location Broadcasting at Scale',
+    //     problem: 'Pharmacies needed to see their assigned driver\'s GPS position update live on the map. A naive polling approach every 2 seconds caused the API server to spike to 90 % CPU under just 40 concurrent pharmacy sessions — completely unsustainable for a production fleet.',
+    //     solution: 'Replaced polling with a persistent WebSocket channel per delivery using Laravel Reverb. Drivers push a compact {lat, lng, bearing} payload from the mobile app every 3 seconds. The server fans that event out only to the specific pharmacy channel, not broadcast-wide. A Redis presence channel tracks which pharmacies are actively watching so we skip broadcasting to idle tabs entirely.',
+    //     result: 'CPU load on the broadcast server dropped from 90 % to under 12 % under the same 40-session load. Location lag went from ~6 s (polling round-trip) to under 1 s end-to-end.',
+    //     stack: ['Laravel Reverb', 'WebSockets', 'Redis', 'GPS API'],
+    //   },
+    //   {
+    //     title: 'Commission vs. Subscription Billing Engine',
+    //     problem: 'The platform needed two completely different monetisation models running simultaneously: pharmacies on a flat monthly subscription, and independent drivers on a per-delivery commission. A single invoice/billing table could not cleanly represent both without dozens of nullable columns and messy conditional logic spread across controllers.',
+    //     solution: 'Applied the Strategy pattern inside a BillingService class. Each model (SubscriptionStrategy, CommissionStrategy) implements a shared BillableInterface with a calculate(order) method. The service resolves the correct strategy at runtime via the partner\'s billing_type enum. Invoices are generated as PDF attachments via Laravel Queues so the HTTP response is never blocked.',
+    //     result: 'Adding a third billing model (e.g. hybrid) later required zero changes to controllers — only a new strategy class. Invoice generation time averaged 340 ms off the critical path thanks to queuing.',
+    //     stack: ['Laravel', 'Strategy Pattern', 'Queues', 'PDF Generation'],
+    //   },
+    // ],
+  },
   {
     id: 4445,
     title: 'Multivendor web & mobile application (Daw2ni)',
