@@ -49,7 +49,7 @@ CRMzz is a CRM and social marketing platform designed to help businesses central
 The platform enables businesses to import and organize contacts from multiple sources, manage customer engagement, run email and SMS marketing campaigns, discover relevant influencers, and coordinate influencer marketing activities. It brings customer relationship management and marketing workflows together to help businesses improve customer engagement, retention, and brand visibility.
     `,
     imageUrl: image25,
-    url: 'https://drive.google.com/drive/folders/1OEW4i2GFvpLzL0U_m-n-_TNKiI_fg6We?usp=sharing',
+    url: 'https://crmzz.com/',
     tags: ['React.js', 'PHP', 'Laravel', 'Node.js', 'SaaS'],
     // deepDives: [
     //   {
